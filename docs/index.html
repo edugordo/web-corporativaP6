@@ -6,55 +6,119 @@
     <title>FoodLogistic S.A. - Solucions Logístiques Intel·ligents</title>
 
     <style>
+        /* ------ ESTILS GENERALS ------ */
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            background: #f5f5f5;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #eef2f7;
             color: #333;
         }
 
-        header {
-            background: #0A5FA8;
-            padding: 20px;
-            color: white;
-            text-align: center;
+        h1, h2 {
+            margin-top: 0;
         }
 
+        /* ------ CAPÇALERA ------ */
+        header {
+            background: linear-gradient(135deg, #0A5FA8, #0F7AC0);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* ------ MENÚ ------ */
         nav {
             background: #083f6d;
-            padding: 10px;
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            gap: 20px;
         }
 
         nav a {
             color: white;
-            margin: 10px;
             text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            transition: 0.2s;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            background: #0A5FA8;
+            transform: translateY(-2px);
+        }
+
+        /* ------ CONTENIDOR PRINCIPAL ------ */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+        }
+
+        /* TARGETES */
+        .card {
+            background: #ffffff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.05);
+        }
+
+        /* BOTÓ CORPORATIU */
+        .btn {
+            display: inline-block;
+            background: #0A5FA8;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: 0.25s;
             font-weight: bold;
         }
 
-        section {
-            padding: 40px;
+        .btn:hover {
+            background: #094f8a;
+            transform: translateY(-2px);
         }
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-        }
-
+        /* ------ PEU DE PÀGINA ------ */
         footer {
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            padding: 25px;
+            margin-top: 50px;
             background: #0A5FA8;
             color: white;
+        }
+
+        /* ------ ENLLAÇOS LEGALS ------ */
+        .legal-links a {
+            text-decoration: none;
+            color: #0A5FA8;
+            font-weight: bold;
+        }
+
+        .legal-links a:hover {
+            text-decoration: underline;
         }
     </style>
 
     <!-- ESPAI PER AL CODI DE STATCOUNTER -->
-    <!-- INSERIR AQUÍ EL SCRIPT DE STATCOUNTER SEGONS LES INSTRUCCIONS DE LA PLATAFORMA -->
+    <!-- INSEREIX AQUÍ EL TEU SCRIPT PERSONAL DE STATCOUNTER -->
 </head>
 
 <body>
@@ -73,48 +137,67 @@
 
 <section id="empresa">
     <div class="container">
-        <h2>Sobre nosaltres</h2>
-        <p>
-            FoodLogistic S.A. és una empresa líder en la distribució de productes alimentaris 
-            amb una xarxa logística eficient i moderna.  
-            Treballem amb tecnologia d’última generació per garantir el millor servei.
-        </p>
+        <h2>Qui som?</h2>
+        <div class="card">
+            <p>
+                A FoodLogistic S.A. liderem el sector de la distribució alimentària amb 
+                una infraestructura moderna i una gestió intel·ligent del transport.
+                Apostem per la innovació, la sostenibilitat i la qualitat del servei.
+            </p>
+            <a class="btn" href="#serveis">Descobreix els nostres serveis</a>
+        </div>
     </div>
 </section>
 
 <section id="serveis">
     <div class="container">
         <h2>Serveis</h2>
-        <ul>
-            <li>Transport frigorífic 24/7</li>
-            <li>Magatzems amb control de temperatura</li>
-            <li>Seguiment GPS de flotes en temps real</li>
-            <li>Distribució a supermercats i cadenes d'alimentació</li>
-        </ul>
+
+        <div class="card">
+            <h3>Transport frigorífic 24/7</h3>
+            <p>Garantim el manteniment de la cadena de fred durant tot el trajecte.</p>
+        </div>
+
+        <div class="card">
+            <h3>Magatzems refrigerats</h3>
+            <p>Instal·lacions modernes amb control de temperatura i monitoratge constant.</p>
+        </div>
+
+        <div class="card">
+            <h3>Seguiment GPS en temps real</h3>
+            <p>Control total sobre la flota i els enviaments.</p>
+        </div>
+
+        <div class="card">
+            <h3>Distribució nacional</h3>
+            <p>Arribem a supermercats, cadenes i botigues d’arreu del país.</p>
+        </div>
     </div>
 </section>
 
 <section id="contacte">
     <div class="container">
         <h2>Contacte</h2>
-        <p><strong>Telèfon:</strong> 934 123 456</p>
-        <p><strong>Email:</strong> info@foodlogistic.com</p>
-        <p><strong>Adreça:</strong> Polígon Industrial La Marineta, Nau 14</p>
+        <div class="card">
+            <p><strong>Telèfon:</strong> 934 123 456</p>
+            <p><strong>Email:</strong> info@foodlogistic.com</p>
+            <p><strong>Adreça:</strong> Polígon Industrial La Marineta, Nau 14</p>
+            <a class="btn" href="mailto:info@foodlogistic.com">Envia un email</a>
+        </div>
     </div>
 </section>
 
 <section id="legal">
     <div class="container">
         <h2>Informació Legal</h2>
-        <p>
-            Aquesta pàgina compleix amb la <strong>LOPDGDD</strong> i la <strong>LSSI-CE</strong>.  
-            Consulta la nostra política:
-        </p>
-        <ul>
-            <li><a href="#" target="_blank">Política de Privacitat</a></li>
-            <li><a href="#" target="_blank">Avís Legal</a></li>
-            <li><a href="#" target="_blank">Política de Cookies</a></li>
-        </ul>
+        <div class="card legal-links">
+            <p>Aquesta web compleix amb la normativa <strong>LOPDGDD</strong> i <strong>LSSI-CE</strong>.</p>
+            <p>
+                <a href="#">Política de Privacitat</a> · 
+                <a href="#">Avís Legal</a> · 
+                <a href="#">Política de Cookies</a>
+            </p>
+        </div>
     </div>
 </section>
 
@@ -122,5 +205,7 @@
     © 2026 FoodLogistic S.A. – Tots els drets reservats
 </footer>
 
+</body>
+</html>
 </body>
 </html>
