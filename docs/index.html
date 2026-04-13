@@ -1,231 +1,260 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodLogistic S.A.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoodLogistic S.A.</title>
 
-    <style>
-        /* ---------- ESTILS GLOBALS ---------- */
+<style>
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            color: #1b1b1b;
-            background: linear-gradient(135deg, #dfe9f3 0%, #eef2f7 100%);
-        }
+/* ------------------------------ */
+/* FONS ANIMAT AMB ONADES FLUIDES */
+/* ------------------------------ */
 
-        html {
-            scroll-behavior: smooth;
-        }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #1c1c1c;
+    overflow-x: hidden;
+    background: #e9eef6;
+}
 
-        h2 {
-            margin-top: 0;
-        }
+.wave {
+    position: fixed;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    background: radial-gradient(circle at 20% 20%, #8fcdf0, transparent 50%),
+                radial-gradient(circle at 80% 80%, #0a5fa8, transparent 50%);
+    animation: move 18s ease-in-out infinite alternate;
+    filter: blur(150px);
+    z-index: -10;
+}
 
-        /* ---------- EFECTE DE FORMES ORGANICAS ---------- */
+@keyframes move {
+    from { transform: translateX(-10%) translateY(-10%); }
+    to   { transform: translateX(10%) translateY(10%); }
+}
 
-        .shape1, .shape2 {
-            position: fixed;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            filter: blur(140px);
-            z-index: -1;
-            opacity: 0.4;
-        }
+/* ------------------------------ */
+/* NAVBAR TRANSLÚCID MODERN       */
+/* ------------------------------ */
 
-        .shape1 {
-            background: #0a5fa8;
-            top: -100px;
-            left: -100px;
-        }
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.6);
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+}
 
-        .shape2 {
-            background: #6fc3df;
-            bottom: -100px;
-            right: -100px;
-        }
+nav a {
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.7);
+    font-weight: bold;
+    color: #083f6d;
+    transition: .25s;
+    box-shadow: 6px 6px 12px #ced6e0, -6px -6px 12px #ffffff;
+}
 
-        /* ---------- HEADER ---------- */
+nav a:hover {
+    transform: translateY(-4px);
+    background: #0a5fa8;
+    color: white;
+}
 
-        header {
-            padding: 120px 20px;
-            text-align: center;
-            color: #fff;
-            background: rgba(10, 95, 168, 0.85);
-            backdrop-filter: blur(6px);
-            border-bottom-left-radius: 60px;
-            border-bottom-right-radius: 60px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
+nav a:active {
+    transform: translateY(2px);
+    box-shadow: inset 4px 4px 8px #0a3f6d;
+}
 
-        header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-        }
+/* ------------------------------ */
+/* HEADER HERO                     */
+/* ------------------------------ */
 
-        /* ---------- MENÚ ---------- */
+header {
+    padding: 120px 20px;
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
 
-        nav {
-            margin-top: -40px;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            position: sticky;
-            top: 0;
-            padding: 20px;
-            backdrop-filter: blur(12px);
-            background: rgba(255,255,255,0.7);
-            z-index: 1000;
-            border-radius: 0 0 20px 20px;
-        }
+header h1 {
+    font-size: 3.8rem;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
 
-        nav a {
-            padding: 12px 20px;
-            text-decoration: none;
-            color: #0a3d6b;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: 0.25s;
-            font-weight: bold;
-        }
+header p {
+    font-size: 1.3rem;
+}
 
-        nav a:hover {
-            transform: translateY(-4px);
-            background: #0a5fa8;
-            color: white;
-        }
+/* ------------------------------ */
+/* SECCIONS EN CARDS DE VIDRE     */
+/* ------------------------------ */
 
-        nav a:active {
-            transform: translateY(2px);
-        }
+.section {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 55px;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(16px);
+    border-radius: 32px;
+    box-shadow: 
+        20px 20px 40px rgba(0,0,0,0.15),
+        inset 2px 2px 6px rgba(255,255,255,0.6);
+    animation: fadein 1s ease forwards;
+}
 
-        /* ---------- SECCIONS ---------- */
+@keyframes fadein {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
 
-        .section {
-            max-width: 1100px;
-            margin: 70px auto;
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(12px);
-            padding: 45px;
-            border-radius: 30px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-        }
+.section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #0a3f6d;
+}
 
-        /* ---------- BOTONS ---------- */
+/* ------------------------------ */
+/* BOTONS 3D NEOMORPHIC           */
+/* ------------------------------ */
 
-        .btn {
-            display: inline-block;
-            background: #0a5fa8;
-            color: white;
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 12px;
-            margin-top: 20px;
-            font-weight: bold;
-            transition: 0.25s;
-            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-        }
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    background: #0a5fa8;
+    color: white;
+    box-shadow: 6px 6px 14px #0a3f6d, -6px -6px 14px #0c70c7;
+    transition: .25s;
+}
 
-        .btn:hover {
-            transform: translateY(-4px);
-            background: #0c70c7;
-        }
+.btn:hover {
+    transform: translateY(-4px);
+}
 
-        .btn:active {
-            transform: translateY(2px);
-        }
+.btn:active {
+    transform: translateY(2px);
+    box-shadow: inset 4px 4px 8px #083f6d;
+}
 
-        /* ---------- COOKIES ---------- */
+/* ------------------------------ */
+/* FOOTER                         */
+/* ------------------------------ */
 
-        #cookieBanner {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 500px;
-            background: white;
-            padding: 20px;
-            border-radius: 18px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-            display: none;
-            z-index: 9999;
-            text-align: center;
-        }
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 80px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    backdrop-filter: blur(10px);
+}
 
-        #cookieBanner button {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 8px;
-            margin: 5px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+/* ------------------------------ */
+/* COOKIE BANNER                  */
+/* ------------------------------ */
 
-        .accept {
-            background: #0a5fa8;
-            color: white;
-        }
+#cookieBanner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 540px;
+    padding: 25px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    text-align: center;
+    z-index: 9999;
+    display: none;
+}
 
-        .reject {
-            background: #666;
-            color: white;
-        }
+.cookie-btn {
+    padding: 12px 15px;
+    margin: 6px;
+    border-radius: 12px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
 
-        .manage {
-            background: #cccccc;
-        }
+.accept { background: #0a5fa8; color: white; }
+.reject { background: #777; color: white; }
+.manage { background: #e0e0e0; }
 
-        /* ---------- FOOTER ---------- */
+/* MODAL */
+#cookieModal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
 
-        footer {
-            padding: 20px;
-            text-align: center;
-            background: #0a5fa8;
-            color: white;
-            margin-top: 80px;
-            border-top-left-radius: 40px;
-            border-top-right-radius: 40px;
-        }
+#cookieModal .modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 450px;
+}
 
-    </style>
+</style>
 </head>
 
 <body>
 
-<div class="shape1"></div>
-<div class="shape2"></div>
+<div class="wave"></div>
 
 <header>
     <h1>FoodLogistic S.A.</h1>
-    <p>Innovació logística amb qualitat garantida</p>
+    <p>La logística del futur, avui.</p>
 </header>
 
 <nav>
     #empresaEmpresa</a>
     #serveis
     #contacte
-    #legalLegal</a>
+    #legalInformació Legal</a>
 </nav>
+
+/* ------------- SECCIONS ---------------- */
 
 <section id="empresa" class="section">
     <h2>Qui som?</h2>
     <p>
-        FoodLogistic S.A. és una empresa referent en distribució alimentària, amb tecnologia intel·ligent per optimitzar
-        rutes, mantenir la cadena de fred i oferir la millor experiència als clients.
+        FoodLogistic S.A. combina tecnologia punta amb un servei impecable per garantir la
+        millor cadena de subministrament en alimentació. La nostra flota intel·ligent i sistemes 
+        de monitoratge ens converteixen en líders del sector.
     </p>
 </section>
 
 <section id="serveis" class="section">
     <h2>Serveis</h2>
+    <p>Oferim:</p>
     <ul>
-        <li><strong>Transport frigorífic 24/7</strong></li>
-        <li><strong>Seguiment GPS en temps real</strong></li>
-        <li><strong>Magatzems amb temperatura controlada</strong></li>
-        <li><strong>Distribució nacional</strong></li>
+        <li>Transport frigorífic 24/7</li>
+        <li>Control de temperatura i humitat</li>
+        <li>Seguiment GPS en temps real</li>
+        <li>Distribució nacional i zonal</li>
     </ul>
 </section>
 
@@ -237,40 +266,60 @@
 </section>
 
 <section id="legal" class="section">
-    <h2>Informació Legal</h2>
-    <p>Aquesta web compleix la LOPDGDD i LSSI-CE.</p>
-    <ul>
-        <li># target="_blank">Política de privacitat</a></li>
-        <li>#">Avís legal</a></li>
-        <li>#">Política de cookies</a></li>
-    </ul>
+    <h2>Informació legal</h2>
+    <p>Aquesta web compleix la LOPDGDD i LSSI.</p>
 </section>
 
-<footer>
-    © 2026 FoodLogistic S.A.
-</footer>
+<footer>© 2026 FoodLogistic S.A.</footer>
 
 
-<!-- ---------- BANNER DE COOKIES ---------- -->
+<!-- ---------------------------- -->
+<!-- COOKIE BANNER + SCRIPT       -->
+<!-- ---------------------------- -->
+
 <div id="cookieBanner">
-    <p>Aquesta web utilitza cookies per millorar l'experiència. Vols acceptar-les?</p>
-    <button class="accept" onclick="setCookie('accepted')">Acceptar</button>
-    <button class="reject" onclick="setCookie('rejected')">Rebutjar</button>
-    <button class="manage" onclick="alert('Funció de gestió de cookies pendent de configurar.')">Gestionar</button>
+    <p>Aquesta web utilitza cookies. Acceptes la seva utilització?</p>
+    <button class="cookie-btn accept" onclick="acceptCookies()">Acceptar</button>
+    <button class="cookie-btn reject" onclick="rejectCookies()">Rebutjar</button>
+    <button class="cookie-btn manage" onclick="openCookieModal()">Gestionar</button>
+</div>
+
+<div id="cookieModal">
+    <div class="modal-content">
+        <h3>Preferències de cookies</h3>
+        <p>Pots activar o desactivar categories específiques.</p>
+        <label><input type="checkbox" checked> Necessàries</label><br>
+        <label><input type="checkbox"> Analítiques</label><br>
+        <label><input type="checkbox"> Personalització</label><br><br>
+        <button class="cookie-btn accept" onclick="closeCookieModal()">Desar</button>
+    </div>
 </div>
 
 <script>
-    function setCookie(value) {
-        localStorage.setItem("cookies", value);
-        document.getElementById("cookieBanner").style.display = "none";
-    }
 
-    window.onload = () => {
-        if (!localStorage.getItem("cookies")) {
-            document.getElementById("cookieBanner").style.display = "block";
-        }
-    };
+function acceptCookies() {
+    localStorage.setItem("cookies", "accepted");
+    document.getElementById("cookieBanner").style.display = "none";
+}
+function rejectCookies() {
+    localStorage.setItem("cookies", "rejected");
+    document.getElementById("cookieBanner").style.display = "none";
+}
+function openCookieModal() {
+    document.getElementById("cookieModal").style.display = "flex";
+}
+function closeCookieModal() {
+    document.getElementById("cookieModal").style.display = "none";
+}
+
+window.onload = () => {
+    if (!localStorage.getItem("cookies")) {
+        document.getElementById("cookieBanner").style.display = "block";
+    }
+};
+
 </script>
 
 </body>
 </html>
+``
