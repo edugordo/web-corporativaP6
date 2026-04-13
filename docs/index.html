@@ -7,150 +7,169 @@
 
 <style>
 
-/* FONS ANIMAT AMB ONADES */
+/* -------------------------- */
+/*  FONTS I ESTILS GLOBALS    */
+/* -------------------------- */
+
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    color: #1c1c1c;
+    font-family: "Segoe UI", sans-serif;
+    color: #fff;
+    background: #0a0f1c;
     overflow-x: hidden;
-    background: #e9eef6;
 }
 
-.wave {
+html {
+    scroll-behavior: smooth;
+}
+
+/* -------------------------- */
+/*  HERO / BANNER PRINCIPAL   */
+/* -------------------------- */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    background: url('https://images.unsplash.com/photo-1606904825846-00293a4e52e9?auto=format&fit=crop&w=1600&q=80')
+                center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+    color: white;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+
+/* capa fosca */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.8));
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-logo {
+    font-size: 4rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin: 10px 0;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin-bottom: 25px;
+}
+
+/* -------------------------- */
+/*   HEADER / NAVBAR FIXE     */
+/* -------------------------- */
+
+.header-nav {
     position: fixed;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    background: radial-gradient(circle at 20% 20%, #8fcdf0, transparent 50%),
-                radial-gradient(circle at 80% 80%, #0a5fa8, transparent 50%);
-    animation: move 18s ease-in-out infinite alternate;
-    filter: blur(150px);
-    z-index: -10;
-}
-
-@keyframes move {
-    from { transform: translateX(-10%) translateY(-10%); }
-    to   { transform: translateX(10%) translateY(10%); }
-}
-
-/* ---------------- HEADER + NAV ---------------- */
-
-.header-container {
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.45);
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 40px;
-    backdrop-filter: blur(12px);
-    background: rgba(255,255,255,0.6);
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    border-bottom: 1px solid rgba(255,255,255,0.5);
+    z-index: 10000;
 }
 
-/* Logo + Nom */
-.logo-area {
+.header-left {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.logo-area img {
-    width: 45px;
-    height: 45px;
-    border-radius: 10px;
-    box-shadow: 3px 3px 8px #a5b4c3;
+.header-left .logo-icon {
+    font-size: 2rem;
 }
 
-.logo-area span {
+.header-left span {
     font-size: 1.2rem;
-    font-weight: 700;
-    color: #083f6d;
-}
-
-/* MENU */
-nav {
-    display: flex;
-    gap: 20px;
+    font-weight: bold;
 }
 
 nav a {
+    margin-left: 20px;
     text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 14px;
-    background: rgba(255,255,255,0.7);
-    font-weight: bold;
-    color: #083f6d;
-    transition: .25s;
-    box-shadow: 6px 6px 12px #ced6e0, -6px -6px 12px #ffffff;
+    font-weight: 600;
+    color: #cfe8ff;
+    padding: 8px 14px;
+    border-radius: 10px;
+    transition: 0.25s;
 }
 
 nav a:hover {
-    transform: translateY(-4px);
-    background: #0a5fa8;
+    background: #0a84ff;
     color: white;
+    transform: translateY(-3px);
 }
 
-nav a:active {
-    transform: translateY(2px);
-    box-shadow: inset 4px 4px 8px #0a3f6d;
-}
-
-/* ---------------- SECCIONS ---------------- */
+/* -------------------------- */
+/*  SECCIONS ESTIL PREMIUM    */
+/* -------------------------- */
 
 .section {
     max-width: 1100px;
-    margin: 60px auto;
-    padding: 55px;
-    background: rgba(255,255,255,0.55);
-    backdrop-filter: blur(16px);
-    border-radius: 32px;
-    box-shadow: 20px 20px 40px rgba(0,0,0,0.15),
-                inset 2px 2px 6px rgba(255,255,255,0.6);
-    animation: fadein 1s ease forwards;
-}
-
-@keyframes fadein {
-    from { opacity: 0; transform: translateY(40px); }
-    to   { opacity: 1; transform: translateY(0); }
+    margin: 90px auto;
+    padding: 50px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.3);
 }
 
 .section h2 {
-    text-align: center;
     font-size: 2rem;
-    margin-bottom: 30px;
-    color: #0a3f6d;
+    margin-bottom: 20px;
 }
 
-/* ---------------- FOOTER ---------------- */
+.section p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+/* -------------------------- */
+/*  FOOTER                    */
+/* -------------------------- */
 
 footer {
-    padding: 40px;
-    background: rgba(0,0,0,0.75);
-    backdrop-filter: blur(8px);
-    margin-top: 80px;
-    color: white;
+    background: #02050b;
+    padding: 60px 40px;
+    margin-top: 100px;
 }
 
 .footer-columns {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 25px;
 }
 
 .footer-columns div {
-    max-width: 220px;
+    max-width: 250px;
+    margin-bottom: 20px;
 }
 
 footer h3 {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: #8fd3ff;
 }
 
 footer a {
-    color: #8fd3ff;
+    color: #cce8ff;
     text-decoration: none;
 }
 
@@ -158,7 +177,9 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* ---------------- COOKIE BANNER ---------------- */
+/* -------------------------- */
+/* BANNER COOKIES             */
+/* -------------------------- */
 
 #cookieBanner {
     position: fixed;
@@ -166,63 +187,60 @@ footer a:hover {
     left: 50%;
     transform: translateX(-50%);
     width: 95%;
-    max-width: 540px;
-    padding: 25px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-    text-align: center;
-    z-index: 9999;
+    max-width: 500px;
+    background: #ffffff;
+    color: #000;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    z-index: 99999;
     display: none;
+    text-align: center;
 }
 
 .cookie-btn {
-    padding: 12px 15px;
-    margin: 6px;
-    border-radius: 12px;
-    font-weight: bold;
+    margin: 8px;
+    padding: 10px 16px;
     border: none;
+    border-radius: 10px;
+    font-weight: 700;
     cursor: pointer;
 }
 
 .accept { background: #0a5fa8; color: white; }
-.reject { background: #777; color: white; }
-.manage { background: #e0e0e0; }
+.reject { background: #666; color: white; }
+.manage { background: #cfcfcf; }
 
 /* MODAL */
 #cookieModal {
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.55);
+    inset: 0;
+    background: rgba(0,0,0,0.7);
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 10000;
+    z-index: 100000;
 }
 
 #cookieModal .modal-content {
     background: white;
+    color: #000;
     padding: 30px;
     border-radius: 20px;
-    width: 90%;
     max-width: 450px;
+    width: 90%;
 }
 
 </style>
 </head>
 
-
 <body>
 
-<div class="wave"></div>
-
-<!-- HEADER -->
-<div class="header-container">
-
-    <div class="logo-area">
-        <img src="https://cdn-icons-png.flaticon.com/512/1047/1047711.png">
-        <span>FoodLogistic S.A.</span>
+<!-- NAVBAR -->
+<div class="header-nav">
+    <div class="header-left">
+        <span class="logo-icon">🌿</span>
+        <span>FoodLogistic</span>
     </div>
 
     <nav>
@@ -231,73 +249,79 @@ footer a:hover {
         <a href="#contacte">Contacte</a>
         <a href="#legal">Legal</a>
     </nav>
-
 </div>
 
+<!-- HERO / BANNER PRINCIPAL -->
+<div class="hero">
+    <div class="hero-content">
+        <div class="hero-logo">🌿</div>
+        <h1>FoodLogistic S.A.</h1>
+        <p>Especialistes en transport frigorífic i logística intel·ligent.  
+        Treballem amb precisió, seguretat i tecnologia avançada.</p>
+    </div>
+</div>
 
 <!-- SECCIONS -->
 <section id="empresa" class="section">
-    <h2>Qui som?</h2>
+    <h2>Sobre l'empresa</h2>
     <p>
-        FoodLogistic S.A. és una empresa puntera en logística alimentària, 
-        especialitzada en transport frigorífic, distribució nacional i tecnologia intel·ligent
-        per optimitzar rutes i reduir costos.
+        FoodLogistic S.A. és líder en transport frigorífic a nivell nacional.  
+        Operem amb una flota moderna equipada amb sistemes de control de temperatura,
+        sensors IoT i gestió de rutes optimitzada per IA.
     </p>
 </section>
 
 <section id="serveis" class="section">
     <h2>Serveis</h2>
-    <ul>
-        <li>Transport refrigerat 24/7</li>
-        <li>Magatzems amb control de temperatura</li>
-        <li>Seguiment GPS en temps real</li>
-        <li>Distribució nacional i ràpida</li>
-    </ul>
+    <p>
+        ✅ Transport frigorífic 24/7 amb cadena de fred garantida  
+        ✅ Seguiment GPS en temps real  
+        ✅ Magatzems certificats amb control ambiental  
+        ✅ Distribució nacional i internacional  
+        ✅ Control de qualitat i traçabilitat avançada
+    </p>
 </section>
 
 <section id="contacte" class="section">
     <h2>Contacte</h2>
-    <p><strong>Telèfon:</strong> 934 123 456</p>
-    <p><strong>Email:</strong> info@foodlogistic.com</p>
-    <p><strong>Adreça:</strong> Polígon Industrial La Marineta, Nau 14</p>
+    <p>
+        📞 Telèfon: 934 123 456<br>
+        📧 Email: info@foodlogistic.com<br>
+        📍 Adreça: Polígon Industrial La Marineta, Nau 14
+    </p>
 </section>
 
 <section id="legal" class="section">
-    <h2>Informació Legal</h2>
-    <p>Complim amb LOPDGDD i LSSI-CE.</p>
+    <h2>Informació legal</h2>
+    <p>Complim amb LOPDGDD i LSSI-CE.  
+    Consulta la política de privacitat, cookies i l'avís legal.</p>
 </section>
 
-<!-- FOOTER COMPLET -->
+<!-- FOOTER -->
 <footer>
     <div class="footer-columns">
         <div>
-            <h3>Empresa</h3>
-            <p>Solucions logístiques d'alt rendiment per a la indústria alimentària.</p>
+            <h3>FoodLogistic</h3>
+            <p>Empresa líder en transport frigorífic amb solucions innovadores.</p>
         </div>
-
         <div>
             <h3>Enllaços útils</h3>
-            <a href="#empresa">Sobre nosaltres</a><br>
+            <a href="#empresa">Empresa</a><br>
             <a href="#serveis">Serveis</a><br>
             <a href="#contacte">Contacte</a>
         </div>
-
         <div>
             <h3>Legal</h3>
             <a href="#">Política de privacitat</a><br>
-            <a href="#">Avís legal</a><br>
-            <a href="#">Política de cookies</a>
+            <a href="#">Política de cookies</a><br>
+            <a href="#">Avís legal</a>
         </div>
     </div>
-
-    <br><br>
-    © 2026 FoodLogistic S.A. – Tots els drets reservats
 </footer>
-
 
 <!-- COOKIE BANNER -->
 <div id="cookieBanner">
-    <p>Aquesta web utilitza cookies. Acceptes la seva utilització?</p>
+    <p>Aquesta web utilitza cookies. Vols acceptar-les?</p>
     <button class="cookie-btn accept" onclick="acceptCookies()">Acceptar</button>
     <button class="cookie-btn reject" onclick="rejectCookies()">Rebutjar</button>
     <button class="cookie-btn manage" onclick="openCookieModal()">Gestionar</button>
@@ -306,16 +330,12 @@ footer a:hover {
 <div id="cookieModal">
     <div class="modal-content">
         <h3>Preferències de cookies</h3>
-        <p>Tria quines categories vols activar:</p>
-
         <label><input type="checkbox" checked> Necessàries</label><br>
         <label><input type="checkbox"> Analítiques</label><br>
         <label><input type="checkbox"> Personalització</label><br><br>
-
         <button class="cookie-btn accept" onclick="closeCookieModal()">Desar</button>
     </div>
 </div>
-
 
 <script>
 function acceptCookies() {
