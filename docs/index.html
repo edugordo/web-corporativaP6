@@ -11,47 +11,42 @@
 <style>
 
 /* ========================================================= */
-/*                 PALETA I ESTILS GLOBALS F1                */
+/*                     ESTILS GLOBALS (F1)                   */
 /* ========================================================= */
-
 :root {
-    --bg-dark: #070910;
-    --bg-card: #0E111C;
+    --bg-dark: #080A12;
+    --bg-card: #10131F;
     --primary: #6A4DFF;
     --primary-light: #8C73FF;
     --text: #E8EAFF;
     --radius: 32px;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
     font-family: "Segoe UI", sans-serif;
     background: var(--bg-dark);
     color: var(--text);
-    overflow-x: hidden;
 }
 
 html { scroll-behavior: smooth; }
 
 /* ========================================================= */
-/*                          NAVBAR                           */
+/*                           NAVBAR                          */
 /* ========================================================= */
 
 .header-nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 18px 60px;
+    padding: 20px 60px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    background: rgba(10, 12, 20, 0.55);
+    background: rgba(10, 12, 20, 0.65);
     backdrop-filter: blur(12px);
     z-index: 9999;
 }
@@ -72,6 +67,7 @@ html { scroll-behavior: smooth; }
     color: var(--text);
 }
 
+/* MENU */
 nav.top-menu {
     display: flex;
     gap: 40px;
@@ -82,9 +78,9 @@ nav.top-menu a {
     text-decoration: none;
     color: var(--text);
     font-weight: 600;
-    padding: 10px 18px;
-    border-radius: 12px;
-    transition: .25s;
+    padding: 10px 16px;
+    border-radius: 10px;
+    transition: 0.25s;
 }
 
 nav.top-menu a:hover {
@@ -94,7 +90,7 @@ nav.top-menu a:hover {
 }
 
 /* ========================================================= */
-/*                    HERO APPLE STYLE F1                    */
+/*                         HERO (F1)                         */
 /* ========================================================= */
 
 .hero {
@@ -104,14 +100,13 @@ nav.top-menu a:hover {
     padding-left: 10vw;
 
     background:
-        radial-gradient(circle at 20% 30%, rgba(100,80,255,0.35), transparent 60%),
-        radial-gradient(circle at 80% 70%, rgba(140,120,255,0.25), transparent 60%),
-        radial-gradient(circle at 50% 50%, rgba(90,80,200,0.20), transparent 60%),
-        #070910;
+        radial-gradient(circle at 20% 30%, rgba(120,100,255,0.30), transparent 60%),
+        radial-gradient(circle at 80% 70%, rgba(150,130,255,0.25), transparent 60%),
+        radial-gradient(circle at 50% 50%, rgba(90,80,200,0.17), transparent 60%),
+        #080A12;
 }
 
 .hero-content {
-    z-index: 10;
     max-width: 600px;
 }
 
@@ -126,11 +121,10 @@ nav.top-menu a:hover {
 
 .hero p {
     font-size: 1.3rem;
-    opacity: .88;
+    opacity: 0.9;
     line-height: 1.7;
 }
 
-/* BOTONS DEL HERO */
 .hero-buttons {
     margin-top: 35px;
     display: flex;
@@ -143,34 +137,24 @@ nav.top-menu a:hover {
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
-    transition: .25s;
+    transition: 0.25s;
     text-decoration: none;
-    display: inline-block;
 }
 
 .btn-primary {
     background: var(--primary);
     color: white;
 }
-
-.btn-primary:hover {
-    background: var(--primary-light);
-    transform: translateY(-3px);
-}
+.btn-primary:hover { background: var(--primary-light); transform: translateY(-3px); }
 
 .btn-outline {
-    color: white;
     border: 2px solid white;
+    color: white;
 }
-
-.btn-outline:hover {
-    background: white;
-    color: black;
-    transform: translateY(-3px);
-}
+.btn-outline:hover { background:white; color:black; transform: translateY(-3px); }
 
 /* ========================================================= */
-/*               SECCIONS FULL SCREEN (100vh)                */
+/*                     SECCIONS 100vh                        */
 /* ========================================================= */
 
 .section-wrapper {
@@ -180,50 +164,44 @@ nav.top-menu a:hover {
     padding: 0 40px;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: 40px;
 }
 
-.section-wrapper.reverse {
-    flex-direction: row-reverse;
-}
+.section-wrapper.reverse { flex-direction: row-reverse; }
 
 /* QUADRAT DE TEXT */
 .section-box {
-    flex: 1;
+    flex:1;
     height: 85vh;
-
     background: var(--bg-card);
-    padding: 60px;
     border-radius: var(--radius);
-
+    padding: 60px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
-    box-shadow: 0 15px 40px rgba(0,0,0,0.40);
+    justify-content:center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.45);
 }
 
 .section-box h2 {
     font-size: 2.5rem;
-    margin-bottom: 25px;
+    margin-bottom:25px;
 }
 
 .section-box p,
 .section-box li {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     line-height: 1.75;
-    opacity: .92;
 }
 
-/* IMATGE ABSTRACTA 100% */
+/* IMATGE ABSTRACTA */
 .section-img {
-    flex: 1;
+    flex:1;
     height: 85vh;
     border-radius: var(--radius);
     overflow: hidden;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
 .section-img img {
@@ -233,7 +211,7 @@ nav.top-menu a:hover {
 }
 
 /* ========================================================= */
-/*                    FORMULARI FULL SCREEN                  */
+/*                      FORMULARI 100vh                      */
 /* ========================================================= */
 
 .form-section {
@@ -241,115 +219,121 @@ nav.top-menu a:hover {
     max-width: 900px;
     margin: 0 auto;
     padding: 80px;
-    background: var(--bg-card);
     border-radius: var(--radius);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.45);
-    text-align: center;
-}
-
-.form-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 25px;
+    background: var(--bg-card);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.45);
+    text-align:center;
 }
 
 form {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    margin-top:30px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
 }
 
-form input, form textarea {
-    width: 100%;
-    padding: 18px;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 14px;
-    background: #161a29;
-    color: var(--text);
+input, textarea {
+    width:100%;
+    padding:18px;
+    font-size:1.1rem;
+    border:none;
+    border-radius:14px;
+    background:#161a29;
+    color:white;
 }
 
-textarea {
-    height: 150px;
-}
+textarea { height: 150px; }
 
-.form-btn {
+button.form-btn {
     padding: 18px;
     background: var(--primary);
-    border-radius: 14px;
-    border: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: white;
-    cursor: pointer;
-    transition: .25s;
+    border:none;
+    border-radius:14px;
+    color:white;
+    font-size:1.1rem;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.25s;
 }
 
-.form-btn:hover {
+button.form-btn:hover {
     background: var(--primary-light);
     transform: translateY(-3px);
 }
 
 /* ========================================================= */
-/*                          FOOTER                           */
+/*                    PANTALLA D'AGRAÏMENT                   */
 /* ========================================================= */
 
-footer {
-    text-align: center;
-    padding: 40px;
-    color: #a3accf;
+#thanksScreen {
+    display:none;
+    height:100vh;
+    background:#080A12;
+    color:white;
+    font-size:2rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
 }
 
 /* ========================================================= */
-/*                        COOKIES BANNER                     */
+/*                         COOKIE BAR                        */
 /* ========================================================= */
 
-#cookieBanner {
+#cookieBar {
     position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom:0;
+    left:0;
+    width:100%;
+    background:white;
+    color:black;
+    padding:25px 40px;
 
-    background: white;
-    padding: 22px;
-    border-radius: 14px;
-    box-shadow: 0 12px 22px rgba(0,0,0,0.35);
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    box-shadow: 0 -8px 20px rgba(0,0,0,0.35);
 
-    color: black;
-    z-index: 9999999;
+    z-index:999999;
+}
+
+.cookie-options {
+    display:flex;
+    gap:15px;
 }
 
 .cookie-btn {
-    padding: 10px 16px;
-    border-radius: 10px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
+    padding:10px 18px;
+    border:none;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 .accept { background: var(--primary); color:white; }
-.reject { background: #666; color:white; }
+.reject { background:#555; color:white; }
+.manage { background:#ddd; }
 
 /* ========================================================= */
-/*                         RESPONSIVE                        */
+/*                       RESPONSIVE                          */
 /* ========================================================= */
 
-@media(max-width: 1100px){
-    .section-wrapper,
-    .section-wrapper.reverse {
-        flex-direction: column;
-        height: auto;
-        padding-top: 150px;
-        padding-bottom: 120px;
+@media(max-width:1100px){
+
+    .section-wrapper, .section-wrapper.reverse {
+        flex-direction:column;
+        height:auto;
+        padding-top:160px;
+        padding-bottom:160px;
     }
 
-    .section-box,
-    .section-img {
-        height: auto;
+    .section-img, .section-box {
+        height:auto;
     }
 
     .hero {
-        padding-left: 5vw;
+        padding-left:5vw;
     }
 }
 
@@ -360,131 +344,184 @@ footer {
 
 <!-- ✅ NAVBAR -->
 <div class="header-nav">
-  <div class="header-left">
-    <span class="logo-icon">🌿</span>
-    <span>FoodLogistic</span>
-  </div>
+    <div class="header-left">
+        <span class="logo-icon">🌿</span>
+        <span>FoodLogistic</span>
+    </div>
 
-  <nav class="top-menu">
-    <a href="#empresa">Empresa</a>
-    <a href="#serveis">Serveis</a>
-    <a href="#contacte">Contacte</a>
-    <a href="#formulari">Formulari</a>
-  </nav>
+    <nav class="top-menu">
+        <a href="#empresa">Empresa</a>
+        <a href="#serveis">Serveis</a>
+        <a href="#contacte">Contacte</a>
+        <a href="#formulari">Formulari</a>
+    </nav>
 </div>
 
 <!-- ✅ HERO -->
 <div class="hero">
-  <div class="hero-content" data-aos="fade-right">
-    <div class="hero-logo">🌿</div>
-    <h1>FoodLogistic S.A.</h1>
-    <p>Logística refrigerada d’alta precisió amb tecnologia intel·ligent.</p>
+    <div class="hero-content" data-aos="fade-right">
+        <div class="hero-logo">🌿</div>
+        <h1>FoodLogistic S.A.</h1>
+        <p>Logística refrigerada d'alta precisió amb tecnologia intel·ligent.</p>
 
-    <div class="hero-buttons">
-      <a href="#serveis" class="btn btn-primary">Serveis</a>
-      <a href="#formulari" class="btn btn-outline">Contacta</a>
+        <div class="hero-buttons">
+            <a href="#serveis" class="btn btn-primary">Serveis</a>
+            <a href="#formulari" class="btn btn-outline">Contacta</a>
+        </div>
     </div>
-  </div>
 </div>
 
 <!-- ✅ EMPRESA -->
 <div id="empresa" class="section-wrapper">
-  <div class="section-box" data-aos="fade-up">
-    <h2>Sobre l'empresa</h2>
-    <p>
-      FoodLogistic S.A. és líder en logística refrigerada amb tecnologies 
-      IoT, IA i monitoratge constant per garantir una cadena de fred impecable.
-    </p>
-  </div>
+    <div class="section-box" data-aos="fade-up">
+        <h2>Sobre l'empresa</h2>
+        <p>
+            FoodLogistic S.A. és líder en logística refrigerada amb tecnologia IoT + IA,
+            garantint precisió, control i eficiència en tota la cadena de fred.
+        </p>
+    </div>
 
-  <div class="section-img" data-aos="zoom-in">
-    <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=1600&q=80">
-  </div>
+    <div class="section-img" data-aos="zoom-in">
+        <img src="https://cdn.jsdelivr.net/gh/akabab/someassets/abstracts/gradient-4.jpg">
+    </div>
 </div>
 
 <!-- ✅ SERVEIS -->
 <div id="serveis" class="section-wrapper reverse">
-  <div class="section-box" data-aos="fade-up">
-    <h2>Serveis</h2>
-    <ul>
-      <li>✅ Transport frigorífic 24/7</li>
-      <li>✅ Sensors IoT i IA</li>
-      <li>✅ Seguiment GPS</li>
-      <li>✅ Magatzems certificats</li>
-      <li>✅ Distribució nacional</li>
-    </ul>
-  </div>
+    <div class="section-box" data-aos="fade-up">
+        <h2>Serveis</h2>
+        <ul>
+            <li>✅ Transport frigorífic 24/7</li>
+            <li>✅ Seguiment GPS + IA</li>
+            <li>✅ Control ambiental IoT</li>
+            <li>✅ Magatzems certificats</li>
+            <li>✅ Distribució nacional</li>
+        </ul>
+    </div>
 
-  <div class="section-img" data-aos="zoom-in">
-    <img src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1600&q=80">
-  </div>
+    <div class="section-img" data-aos="zoom-in">
+        <img src="https://cdn.jsdelivr.net/gh/akabab/someassets/abstracts/gradient-6.jpg">
+    </div>
 </div>
 
 <!-- ✅ CONTACTE -->
 <div id="contacte" class="section-wrapper">
-  <div class="section-box" data-aos="fade-up">
-    <h2>Contacte</h2>
-    <p>📞 934 123 456</p>
-    <p>📧 info@foodlogistic.com</p>
-    <p>📍 Nau 14, Polígon La Marineta</p>
+    <div class="section-box" data-aos="fade-up">
+        <h2>Contacte</h2>
+        <p>📞 934 123 456</p>
+        <p>📧 info@foodlogistic.com</p>
+        <p>📍 Nau 14, Polígon La Marineta</p>
 
-    <a href="#formulari" class="btn btn-primary" style="margin-top:20px;">Vull contactar</a>
-  </div>
+        <a href="#formulari" class="btn btn-primary" style="margin-top:25px;">Vull contactar</a>
+    </div>
 
-  <div class="section-img" data-aos="zoom-in">
-    <img src="https://images.unsplash.com/photo-1505483531331-8325e5d93ae8?auto=format&fit=crop&w=1600&q=80">
-  </div>
+    <div class="section-img" data-aos="zoom-in">
+        <!-- ABSTRACTE F1 PER CONTACTE -->
+        <img src="https://cdn.jsdelivr.net/gh/akabab/someassets/abstracts/gradient-soft-1.jpg">
+    </div>
 </div>
 
 <!-- ✅ INFORMACIÓ LEGAL -->
 <div id="legal" class="section-wrapper reverse">
-  <div class="section-box" data-aos="fade-up">
-    <h2>Informació legal</h2>
-    <p>
-      Complim amb LOPDGDD i LSSI-CE per garantir privacitat i seguretat digital.
-    </p>
-  </div>
+    <div class="section-box" data-aos="fade-up">
+        <h2>Informació legal</h2>
+        <p>Complim amb LOPDGDD i LSSI-CE: privacitat, dades i seguretat digital.</p>
+    </div>
 
-  <div class="section-img" data-aos="zoom-in">
-    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1600&q=80">
-  </div>
+    <div class="section-img" data-aos="zoom-in">
+        <!-- ONES ABSTRACTES (L3) -->
+        <img src="https://cdn.jsdelivr.net/gh/akabab/someassets/abstracts/waves-blue-1.jpg">
+    </div>
 </div>
 
 <!-- ✅ FORMULARI -->
 <div id="formulari" class="form-section" data-aos="fade-up">
-  <h2>Formulari de contacte</h2>
-  <form>
-    <input type="text" placeholder="Nom i cognoms" required>
-    <input type="email" placeholder="Correu electrònic" required>
-    <input type="tel" placeholder="Telèfon" required>
-    <textarea placeholder="Missatge o comentaris..." required></textarea>
-    <button class="form-btn" type="submit">Enviar missatge</button>
-  </form>
+    <h2>Formulari de contacte</h2>
+
+    <form id="contactForm">
+        <input type="text" id="nom" placeholder="Nom i cognoms">
+        <input type="email" id="email" placeholder="Correu electrònic">
+        <input type="tel" id="telefon" placeholder="Número de telèfon">
+        <textarea id="missatge" placeholder="Missatge o comentaris..."></textarea>
+
+        <button type="submit" class="form-btn">Enviar missatge</button>
+    </form>
+</div>
+
+<!-- ✅ PANTALLA D'AGRAÏMENT -->
+<div id="thanksScreen">
+    Gràcies per contactar amb nosaltres!<br>Ens posarem en contacte el més aviat possible.
 </div>
 
 <!-- ✅ FOOTER -->
 <footer>
-  © 2026 FoodLogistic — Solucions de logística intel·ligent
+    © 2026 FoodLogistic — Solucions de logística intel·ligent
 </footer>
 
-<!-- ✅ COOKIE BANNER -->
-<div id="cookieBanner">
-  <p>Aquesta web utilitza cookies. Acceptes?</p>
-  <button class="cookie-btn accept" onclick="acceptCookies()">Acceptar</button>
-  <button class="cookie-btn reject" onclick="rejectCookies()">Rebutjar</button>
+<!-- ✅ COOKIE BAR -->
+<div id="cookieBar">
+    <span>Aquesta web utilitza cookies per millorar l’experiència.</span>
+
+    <div class="cookie-options">
+        <button class="cookie-btn accept" onclick="acceptCookies()">Acceptar</button>
+        <button class="cookie-btn reject" onclick="rejectCookies()">Rebutjar</button>
+        <button class="cookie-btn manage" onclick="alert('Opcions avançades de cookies')">Gestionar</button>
+    </div>
 </div>
 
-<!-- AOS + JS -->
+<!-- AOS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init();</script>
 
+<!-- ========================================================= -->
+<!--           VALIDACIÓ DEL FORMULARI + AGRAÏMENT            -->
+<!-- ========================================================= -->
 <script>
-function acceptCookies(){ localStorage.setItem("cookies","ok"); document.getElementById("cookieBanner").style.display="none"; }
-function rejectCookies(){ localStorage.setItem("cookies","no"); document.getElementById("cookieBanner").style.display="none"; }
+const form = document.getElementById("contactForm");
+const thanks = document.getElementById("thanksScreen");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const nom = document.getElementById("nom").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const tel = document.getElementById("telefon").value.trim();
+    const msg = document.getElementById("missatge").value.trim();
+
+    if(!nom || !email || !tel || !msg){
+        alert("Cal completar TOTS els camps del formulari.");
+        return;
+    }
+
+    // Amaga tot i mostra pantalla d'agraïment
+    document.body.innerHTML = "";
+    document.body.appendChild(thanks);
+    thanks.style.display = "flex";
+});
+</script>
+
+<!-- ========================================================= -->
+<!--                       COOKIE BAR JS                        -->
+<!-- ========================================================= -->
+
+<script>
+function acceptCookies(){
+    localStorage.setItem("cookies","accepted");
+    document.getElementById("cookieBar").style.display="none";
+}
+
+function rejectCookies(){
+    localStorage.setItem("cookies","rejected");
+    document.getElementById("cookieBar").style.display="none";
+}
 
 window.onload = () => {
-  document.getElementById("cookieBanner").style.display = "block";
-};
+    if(!localStorage.getItem("cookies")){
+        document.getElementById("cookieBar").style.display="flex";
+    } else {
+        document.getElementById("cookieBar").style.display="none";
+    }
+}
 </script>
 
 </body>
