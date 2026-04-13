@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>FoodLogistic S.A.</title>
 
-<!-- AOS Animations Library -->
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<!-- AOS Animations -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 
 <style>
 
-/* ---------------- GLOBAL STYLES ---------------- */
+/* ---------------- GLOBAL ---------------- */
 
 :root {
     --dark-bg: #0b0f19;
@@ -87,7 +87,7 @@ nav a:hover {
     position: relative;
     width: 100%;
     height: 88vh;
-    background: url('https://images.unsplash.com/photo-1606904825846-00293a4e52e9?auto=format&fit=crop&w=1600&q=80')
+    background: url('https://images.unsplash.com/photo-1549576490-b0b4831ef60a?auto=format&fit=crop&w=1600&q=80')
         center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -174,12 +174,10 @@ nav a:hover {
     padding: 0 40px;
 }
 
-/* invertir l’ordre per intercalar */
 .section-wrapper.reverse {
     flex-direction: row-reverse;
 }
 
-/* QUADRAT */
 .section-box {
     flex: 1;
     background: var(--card-bg);
@@ -196,13 +194,11 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-.section-box p,
-.section-box li {
+.section-box p, .section-box li {
     font-size: 1.15rem;
     line-height: 1.7;
 }
 
-/* IMATGE */
 .section-img {
     flex: 1;
     border-radius: 25px;
@@ -221,17 +217,57 @@ nav a:hover {
     transform: scale(1.03);
 }
 
-/* MOBILE */
-@media (max-width: 900px) {
-    .section-wrapper,
-    .section-wrapper.reverse {
-        flex-direction: column;
-    }
+/* ---------------- FORMULARI DE CONTACTE (SECCIÓ E) ---------------- */
 
-    .section-box,
-    .section-img {
-        width: 100%;
-    }
+.form-section {
+    max-width: 800px;
+    margin: 150px auto;
+    background: var(--card-bg);
+    padding: 60px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+    text-align: center;
+}
+
+.form-section h2 {
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+input, textarea {
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+    height: 140px;
+}
+
+.form-btn {
+    width: 200px;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 12px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.form-btn:hover {
+    background: #006fe0;
+    transform: translateY(-3px);
 }
 
 /* ---------------- FOOTER ---------------- */
@@ -242,10 +278,9 @@ footer {
     background: #05070d;
     text-align: center;
     color: #809bbd;
-    font-size: 1rem;
 }
 
-/* ---------------- COOKIE BANNER ---------------- */
+/* ---------------- COOKIES ---------------- */
 
 #cookieBanner {
     position: fixed;
@@ -297,6 +332,23 @@ footer {
     width: 90%;
 }
 
+/* MOBILE */
+@media (max-width: 900px) {
+    .section-wrapper,
+    .section-wrapper.reverse {
+        flex-direction: column;
+    }
+
+    .section-box,
+    .section-img {
+        width: 100%;
+    }
+
+    .hero {
+        padding-left: 5vw;
+    }
+}
+
 </style>
 </head>
 
@@ -310,16 +362,16 @@ footer {
     </div>
 
     <nav>
-        <a href="#empresa">Empresa</a>
-        <a href="#serveis">Serveis</a>
-        <a href="#contacte">Contacte</a>
-        <a href="#legal">Legal</a>
+        #empresa>
+        #serveis
+        #contacte>Contacte</a>
+        #formulari
     </nav>
 </div>
 
 <!-- ✅ HERO -->
 <div class="hero">
-    <div class="hero-content" data-aos="fade-right" data-aos-duration="1200">
+    <div class="hero-content">
         <div class="hero-logo">🌿</div>
         <h1>FoodLogistic S.A.</h1>
         <p>
@@ -328,29 +380,31 @@ footer {
         </p>
 
         <div class="hero-buttons">
-            <a href="#serveis" class="btn-cta btn-main">Veure serveis</a>
-            <a href="#contacte" class="btn-cta btn-sec">Contacta</a>
+            #serveis class="btn-cta btn-main">Serveis</a>
+            #formulari class="btn-cta btn-sec">Contacta</a>
         </div>
     </div>
 </div>
 
-<!-- ✅ SECCIÓ 1 (TEXT - IMATGE) -->
+<!-- ✅ SECCIONS INTERCALADES -->
+
+<!-- 1) Empresa -->
 <div id="empresa" class="section-wrapper">
     <div class="section-box" data-aos="fade-up">
         <h2>Sobre l'empresa</h2>
         <p>
-            FoodLogistic S.A. és líder en distribució refrigerada a nivell nacional.
-            Operem amb tecnologies IoT, rutes optimitzades per IA i monitoratge 
-            complet de la cadena de fred en temps real.
+            FoodLogistic S.A. és líder en distribució refrigerada a nivell nacional.  
+            Operem amb tecnologies IoT, IA i sistemes de control de temperatura  
+            per garantir la cadena de fred durant tot el trajecte.
         </p>
     </div>
 
     <div class="section-img" data-aos="zoom-in">
-        <img src="https://images.unsplash.com/photo-1578575654271-8cdbd1d09f5a?auto=format&fit=crop&w=1200&q=80" />
+        https://images.unsplash.com/photo-1578575654271-8cdbd1d09f5a?auto=format&fit=crop&w=1400&q=80
     </div>
 </div>
 
-<!-- ✅ SECCIÓ 2 (IMATGE - TEXT) -->
+<!-- 2) Serveis -->
 <div id="serveis" class="section-wrapper reverse">
     <div class="section-box" data-aos="fade-up">
         <h2>Serveis</h2>
@@ -359,48 +413,63 @@ footer {
             <li>✅ Control de temperatura i humitat en temps real</li>
             <li>✅ Seguiment GPS i IA de rutes optimitzades</li>
             <li>✅ Magatzems refrigerats certificats</li>
-            <li>✅ Distribució logística a tot el territori</li>
+            <li>✅ Distribució a tot el territori</li>
             <li>✅ Traçabilitat digital completa</li>
         </ul>
     </div>
 
     <div class="section-img" data-aos="zoom-in">
-        <img src="https://images.unsplash.com/photo-1565619624091-c5d9b6500a94?auto=format&fit=crop&w=1200&q=80" />
+        https://images.unsplash.com/photo-1565619624091-c5d9b6500a94?auto=format&fit=crop&w=1400&q=80
     </div>
 </div>
 
-<!-- ✅ SECCIÓ 3 (TEXT - IMATGE) -->
+<!-- 3) Contacte Breu -->
 <div id="contacte" class="section-wrapper">
     <div class="section-box" data-aos="fade-up">
         <h2>Contacte</h2>
         <p>
-            📞 Telèfon: 934 123 456<br>
-            📧 Email: info@foodlogistic.com<br>
-            📍 Adreça: Polígon Industrial La Marineta, Nau 14
+            📞 934 123 456<br>
+            📧 info@foodlogistic.com<br>
+            📍 Polígon Industrial La Marineta, Nau 14
         </p>
     </div>
 
     <div class="section-img" data-aos="zoom-in">
-        <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fec?auto=format&fit=crop&w=1200&q=80" />
+        https://images.unsplash.com/photo-1533750516457-a7f992034fec?auto=format&fit=crop&w=1400&q=80
     </div>
 </div>
 
-<!-- ✅ SECCIÓ 4 (IMATGE - TEXT) -->
+<!-- 4) Legal -->
 <div id="legal" class="section-wrapper reverse">
     <div class="section-box" data-aos="fade-up">
         <h2>Informació legal</h2>
         <p>
-            Complim amb la normativa LOPDGDD i LSSI-CE: privadesa, cookies, protecció de dades i seguretat digital.
+            Complim amb la normativa LOPDGDD i LSSI-CE: privadesa, cookies, protecció  
+            de dades i seguretat digital.
         </p>
     </div>
 
     <div class="section-img" data-aos="zoom-in">
-        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbc4?auto=format&fit=crop&w=1200&q=80" />
+        https://images.unsplash.com/photo-1578575437130-527eed3abbc4?auto=format&fit=crop&w=1400&q=80
     </div>
 </div>
 
+<!-- ✅ FORMULARI DE CONTACTE (OPCIÓ E) -->
+<div id="formulari" class="form-section" data-aos="fade-up">
+    <h2>Formulari de contacte</h2>
+
+    <form>
+        <input type="text" placeholder="Nom i cognoms" required />
+        <input type="email" placeholder="Correu electrònic" required />
+        <input type="tel" placeholder="Número de telèfon" required />
+        <textarea placeholder="Missatge o comentaris..." required></textarea>
+
+        <button type="submit" class="form-btn">Enviar missatge</button>
+    </form>
+</div>
+
 <!-- ✅ FOOTER -->
-<footer data-aos="fade-up">
+<footer>
     © 2026 FoodLogistic — Solucions de logística intel·ligent
 </footer>
 
@@ -422,7 +491,7 @@ footer {
     </div>
 </div>
 
-<!-- ✅ AOS + COOKIES JS -->
+<!-- ✅ AOS + JS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init();</script>
 
@@ -441,6 +510,7 @@ function openCookieModal() {
 function closeCookieModal() {
     document.getElementById("cookieModal").style.display = "none";
 }
+
 window.onload = () => {
     if (!localStorage.getItem("cookies")) {
         document.getElementById("cookieBanner").style.display = "block";
