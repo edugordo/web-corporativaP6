@@ -7,10 +7,7 @@
 
 <style>
 
-/* ------------------------------ */
-/* FONS ANIMAT AMB ONADES FLUIDES */
-/* ------------------------------ */
-
+/* FONS ANIMAT AMB ONADES */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -37,27 +34,51 @@ body {
     to   { transform: translateX(10%) translateY(10%); }
 }
 
-/* ------------------------------ */
-/* NAVBAR TRANSLÚCID MODERN       */
-/* ------------------------------ */
+/* ---------------- HEADER + NAV ---------------- */
 
-nav {
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.6);
     position: sticky;
     top: 0;
     z-index: 999;
-    backdrop-filter: blur(12px);
-    background: rgba(255,255,255,0.6);
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+
+/* Logo + Nom */
+.logo-area {
     display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 18px;
-    border-bottom: 1px solid rgba(255,255,255,0.4);
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-area img {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px #a5b4c3;
+}
+
+.logo-area span {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #083f6d;
+}
+
+/* MENU */
+nav {
+    display: flex;
+    gap: 20px;
 }
 
 nav a {
     text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 16px;
+    padding: 10px 18px;
+    border-radius: 14px;
     background: rgba(255,255,255,0.7);
     font-weight: bold;
     color: #083f6d;
@@ -76,41 +97,17 @@ nav a:active {
     box-shadow: inset 4px 4px 8px #0a3f6d;
 }
 
-/* ------------------------------ */
-/* HEADER HERO                     */
-/* ------------------------------ */
-
-header {
-    padding: 120px 20px;
-    text-align: center;
-    color: white;
-    margin-bottom: 40px;
-}
-
-header h1 {
-    font-size: 3.8rem;
-    margin-bottom: 15px;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.4);
-}
-
-header p {
-    font-size: 1.3rem;
-}
-
-/* ------------------------------ */
-/* SECCIONS EN CARDS DE VIDRE     */
-/* ------------------------------ */
+/* ---------------- SECCIONS ---------------- */
 
 .section {
     max-width: 1100px;
-    margin: 50px auto;
+    margin: 60px auto;
     padding: 55px;
     background: rgba(255,255,255,0.55);
     backdrop-filter: blur(16px);
     border-radius: 32px;
-    box-shadow: 
-        20px 20px 40px rgba(0,0,0,0.15),
-        inset 2px 2px 6px rgba(255,255,255,0.6);
+    box-shadow: 20px 20px 40px rgba(0,0,0,0.15),
+                inset 2px 2px 6px rgba(255,255,255,0.6);
     animation: fadein 1s ease forwards;
 }
 
@@ -126,47 +123,42 @@ header p {
     color: #0a3f6d;
 }
 
-/* ------------------------------ */
-/* BOTONS 3D NEOMORPHIC           */
-/* ------------------------------ */
-
-.btn {
-    display: inline-block;
-    padding: 15px 30px;
-    border-radius: 16px;
-    text-decoration: none;
-    font-weight: bold;
-    background: #0a5fa8;
-    color: white;
-    box-shadow: 6px 6px 14px #0a3f6d, -6px -6px 14px #0c70c7;
-    transition: .25s;
-}
-
-.btn:hover {
-    transform: translateY(-4px);
-}
-
-.btn:active {
-    transform: translateY(2px);
-    box-shadow: inset 4px 4px 8px #083f6d;
-}
-
-/* ------------------------------ */
-/* FOOTER                         */
-/* ------------------------------ */
+/* ---------------- FOOTER ---------------- */
 
 footer {
-    text-align: center;
-    padding: 25px;
+    padding: 40px;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(8px);
     margin-top: 80px;
-    background: rgba(0,0,0,0.6);
     color: white;
-    backdrop-filter: blur(10px);
 }
 
-/* ------------------------------ */
-/* COOKIE BANNER                  */
-/* ------------------------------ */
+.footer-columns {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.footer-columns div {
+    max-width: 220px;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+footer a {
+    color: #8fd3ff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------- COOKIE BANNER ---------------- */
 
 #cookieBanner {
     position: fixed;
@@ -220,41 +212,46 @@ footer {
 </style>
 </head>
 
+
 <body>
 
 <div class="wave"></div>
 
-<header>
-    <h1>FoodLogistic S.A.</h1>
-    <p>La logística del futur, avui.</p>
-</header>
+<!-- HEADER -->
+<div class="header-container">
 
-<nav>
-    #empresaEmpresa</a>
-    #serveis
-    #contacte
-    #legalInformació Legal</a>
-</nav>
+    <div class="logo-area">
+        <img src="https://cdn-icons-png.flaticon.com/512/1047/1047711.png">
+        <span>FoodLogistic S.A.</span>
+    </div>
 
-/* ------------- SECCIONS ---------------- */
+    <nav>
+        <a href="#empresa">Empresa</a>
+        <a href="#serveis">Serveis</a>
+        <a href="#contacte">Contacte</a>
+        <a href="#legal">Legal</a>
+    </nav>
 
+</div>
+
+
+<!-- SECCIONS -->
 <section id="empresa" class="section">
     <h2>Qui som?</h2>
     <p>
-        FoodLogistic S.A. combina tecnologia punta amb un servei impecable per garantir la
-        millor cadena de subministrament en alimentació. La nostra flota intel·ligent i sistemes 
-        de monitoratge ens converteixen en líders del sector.
+        FoodLogistic S.A. és una empresa puntera en logística alimentària, 
+        especialitzada en transport frigorífic, distribució nacional i tecnologia intel·ligent
+        per optimitzar rutes i reduir costos.
     </p>
 </section>
 
 <section id="serveis" class="section">
     <h2>Serveis</h2>
-    <p>Oferim:</p>
     <ul>
-        <li>Transport frigorífic 24/7</li>
-        <li>Control de temperatura i humitat</li>
+        <li>Transport refrigerat 24/7</li>
+        <li>Magatzems amb control de temperatura</li>
         <li>Seguiment GPS en temps real</li>
-        <li>Distribució nacional i zonal</li>
+        <li>Distribució nacional i ràpida</li>
     </ul>
 </section>
 
@@ -266,17 +263,39 @@ footer {
 </section>
 
 <section id="legal" class="section">
-    <h2>Informació legal</h2>
-    <p>Aquesta web compleix la LOPDGDD i LSSI.</p>
+    <h2>Informació Legal</h2>
+    <p>Complim amb LOPDGDD i LSSI-CE.</p>
 </section>
 
-<footer>© 2026 FoodLogistic S.A.</footer>
+<!-- FOOTER COMPLET -->
+<footer>
+    <div class="footer-columns">
+        <div>
+            <h3>Empresa</h3>
+            <p>Solucions logístiques d'alt rendiment per a la indústria alimentària.</p>
+        </div>
+
+        <div>
+            <h3>Enllaços útils</h3>
+            <a href="#empresa">Sobre nosaltres</a><br>
+            <a href="#serveis">Serveis</a><br>
+            <a href="#contacte">Contacte</a>
+        </div>
+
+        <div>
+            <h3>Legal</h3>
+            <a href="#">Política de privacitat</a><br>
+            <a href="#">Avís legal</a><br>
+            <a href="#">Política de cookies</a>
+        </div>
+    </div>
+
+    <br><br>
+    © 2026 FoodLogistic S.A. – Tots els drets reservats
+</footer>
 
 
-<!-- ---------------------------- -->
-<!-- COOKIE BANNER + SCRIPT       -->
-<!-- ---------------------------- -->
-
+<!-- COOKIE BANNER -->
 <div id="cookieBanner">
     <p>Aquesta web utilitza cookies. Acceptes la seva utilització?</p>
     <button class="cookie-btn accept" onclick="acceptCookies()">Acceptar</button>
@@ -287,16 +306,18 @@ footer {
 <div id="cookieModal">
     <div class="modal-content">
         <h3>Preferències de cookies</h3>
-        <p>Pots activar o desactivar categories específiques.</p>
+        <p>Tria quines categories vols activar:</p>
+
         <label><input type="checkbox" checked> Necessàries</label><br>
         <label><input type="checkbox"> Analítiques</label><br>
         <label><input type="checkbox"> Personalització</label><br><br>
+
         <button class="cookie-btn accept" onclick="closeCookieModal()">Desar</button>
     </div>
 </div>
 
-<script>
 
+<script>
 function acceptCookies() {
     localStorage.setItem("cookies", "accepted");
     document.getElementById("cookieBanner").style.display = "none";
@@ -317,9 +338,7 @@ window.onload = () => {
         document.getElementById("cookieBanner").style.display = "block";
     }
 };
-
 </script>
 
 </body>
 </html>
-``
