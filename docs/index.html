@@ -5,11 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FoodLogistic S.A.</title>
 
-<!-- AOS -->
+<!-- AOS Animations -->
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
 <style>
-/* === ESTIL ORIGINAL (NO TOCADO) === */
+/* ========================================================= */
+/*                        GLOBAL                             */
+/* ========================================================= */
+
 body, html {
     font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
@@ -25,7 +28,10 @@ body, html {
 body{background:var(--bg-dark);color:var(--text);overflow-x:hidden;}
 html{scroll-behavior:smooth;}
 
-/* NAVBAR */
+/* ========================================================= */
+/*                           NAVBAR                          */
+/* ========================================================= */
+
 .header-nav {
     position: fixed;
     top: 0;
@@ -48,7 +54,7 @@ html{scroll-behavior:smooth;}
 
 nav.top-menu {
     display: flex;
-    gap: 30px;
+    gap: 40px;
     align-items: center;
 }
 nav.top-menu a {
@@ -57,7 +63,7 @@ nav.top-menu a {
     text-decoration:none;
     padding:10px 16px;
     border-radius:12px;
-    transition:.25s;
+    transition:0.25s;
 }
 nav.top-menu a:hover {
     background:var(--primary);
@@ -65,7 +71,10 @@ nav.top-menu a:hover {
     transform:translateY(-3px);
 }
 
-/* HERO */
+/* ========================================================= */
+/*                           HERO                            */
+/* ========================================================= */
+
 .hero {
     height:110vh;
     display:flex;
@@ -79,8 +88,8 @@ nav.top-menu a:hover {
 }
 .hero-content { max-width:600px; }
 .hero-logo {font-size:4rem;}
-.hero h1 { margin:20px 0; font-size:4rem; }
-.hero p { font-size:1.3rem; opacity:.9; line-height:1.7; }
+.hero h1 {margin:20px 0;font-size:4rem;}
+.hero p {font-size:1.3rem;opacity:.9;line-height:1.7;}
 
 .hero-buttons{
     margin-top:35px;
@@ -97,6 +106,10 @@ nav.top-menu a:hover {
 .btn-primary {background:var(--primary);color:white;}
 .btn-outline {border:2px solid white;color:white;}
 
+/* ========================================================= */
+/*                        SECCIONS                           */
+/* ========================================================= */
+
 .section-wrapper {
     height:100vh;
     max-width:1600px;
@@ -108,35 +121,45 @@ nav.top-menu a:hover {
     gap:40px;
 }
 .section-wrapper.reverse {flex-direction:row-reverse;}
+
 .section-box {
     flex:1;
     padding:60px;
     background:var(--bg-card);
     border-radius:var(--radius);
 }
-.section-img {flex:1;}
+
+.section-img {
+    flex:1;
+    height:90vh;
+    border-radius:var(--radius);
+    overflow:hidden;
+}
 .section-img img {
     width:100%;
     height:100%;
     object-fit:cover;
-    border-radius:var(--radius);
 }
 
-/* FORMULARIO */
+/* ========================================================= */
+/*                       FORMULARI                          */
+/* ========================================================= */
+
 .form-section {
     max-width:900px;
-    margin:100px auto;
+    margin:120px auto;
     padding:80px;
     background:var(--bg-card);
     border-radius:var(--radius);
 }
+
 form {
     margin-top:30px;
     display:flex;
     flex-direction:column;
     gap:25px;
 }
-input, textarea {
+form input, form textarea {
     padding:18px;
     border-radius:14px;
     background:#161a29;
@@ -144,16 +167,20 @@ input, textarea {
     color:white;
 }
 textarea{height:150px;}
+
 .form-btn{
-    background:var(--primary);
     padding:18px;
+    background:var(--primary);
     border:none;
     border-radius:14px;
-    font-weight:bold;
     color:white;
+    font-weight:bold;
 }
 
-/* ✅ FOOTER LEGAL */
+/* ========================================================= */
+/*                          FOOTER                           */
+/* ========================================================= */
+
 footer{
     text-align:center;
     padding:40px;
@@ -170,7 +197,7 @@ footer a{
 
 <body>
 
-<!-- NAVBAR ORIGINAL + LINK LEGAL -->
+<!-- NAVBAR -->
 <div class="header-nav">
     <div class="header-left">
         <span class="logo-icon">🌿</span>
@@ -182,12 +209,11 @@ footer a{
         <a href="#serveis">Serveis</a>
         <a href="#contacte">Contacte</a>
         <a href="#formulari">Formulari</a>
-        <!-- ✅ LEGAL -->
         <a href="avis-legal.html">Legal</a>
     </nav>
 </div>
 
-<!-- HERO ORIGINAL -->
+<!-- HERO -->
 <div class="hero">
     <div class="hero-content" data-aos="fade-right">
         <div class="hero-logo">🌿</div>
@@ -200,17 +226,18 @@ footer a{
     </div>
 </div>
 
-<!-- CONTENIDO ORIGINAL (IMÁGENES INTACTAS) -->
+<!-- EMPRESA -->
 <div id="empresa" class="section-wrapper">
     <div class="section-box" data-aos="fade-up">
         <h2>Sobre l'empresa</h2>
         <p>FoodLogistic S.A. és líder en logística refrigerada amb tecnologia IoT.</p>
     </div>
-    <div class="section-img">
-        <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6">
+    <div class="section-img" data-aos="fade-left">
+        <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=1600&q=80">
     </div>
 </div>
 
+<!-- SERVEIS -->
 <div id="serveis" class="section-wrapper reverse">
     <div class="section-box" data-aos="fade-up">
         <h2>Serveis</h2>
@@ -220,23 +247,25 @@ footer a{
             <li>✅ Sensors IoT</li>
         </ul>
     </div>
-    <div class="section-img">
-        <img src="https://images.unsplash.com/photo-1557683316-973673baf926">
+    <div class="section-img" data-aos="fade-right">
+        <img src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1600&q=80">
     </div>
 </div>
 
+<!-- CONTACTE -->
 <div id="contacte" class="section-wrapper">
-    <div class="section-box">
+    <div class="section-box" data-aos="fade-up">
         <h2>Contacte</h2>
         <p>📞 934 123 456</p>
         <p>📧 info@foodlogistic.com</p>
+        <p>📍 Nau 14, Polígon La Marineta</p>
     </div>
-    <div class="section-img">
-        <img src="https://images.unsplash.com/photo-1557683300-e6e7168e0f54">
+    <div class="section-img" data-aos="fade-left">
+        <img src="https://images.unsplash.com/photo-1557683300-e6e7168e0f54?auto=format&fit=crop&w=1600&q=80">
     </div>
 </div>
 
-<!-- ✅ FORMULARIO RGPD CORRECTO -->
+<!-- FORMULARI -->
 <div id="formulari" class="form-section">
 <h2>Formulari de contacte</h2>
 
@@ -261,16 +290,23 @@ Accepto comunicacions comercials segons l’
 </form>
 </div>
 
-<!-- ✅ FOOTER LEGAL -->
+<!-- FOOTER -->
 <footer>
-© 2026 FoodLogistic S.A. ·
+© 2026 FoodLogistic S.A.
 <a href="avis-legal.html">Avís Legal</a> ·
 <a href="politica-privacitat.html">Privacitat</a> ·
 <a href="politica-cookies.html">Cookies</a>
 </footer>
 
+<!-- AOS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
+<script>
+AOS.init({
+    duration: 900,
+    once: true
+});
+</script>
 
 </body>
 </html>
+``
