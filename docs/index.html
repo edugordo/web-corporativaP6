@@ -5,24 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FoodLogistic S.A.</title>
 
-<!-- AOS Animations -->
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
 <style>
-
-/* ========================================================= */
-/*                 TIPOGRAFIA SAN FRANCISCO                 */
-/* ========================================================= */
-
 body, html {
     font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
-
-
-/* ========================================================= */
-/*                        PALETA GLOBAL                      */
-/* ========================================================= */
-
 :root {
     --bg-dark:#07090F;
     --bg-card:#0E111C;
@@ -31,538 +19,185 @@ body, html {
     --text:#E8EAFF;
     --radius:32px;
 }
-
-/* Reset */
 *{margin:0;padding:0;box-sizing:border-box;}
-
-body{background:var(--bg-dark);color:var(--text);overflow-x:hidden;}
+body{background:var(--bg-dark);color:var(--text);}
 html{scroll-behavior:smooth;}
 
-
-/* ========================================================= */
-/*                           NAVBAR                          */
-/* ========================================================= */
-
 .header-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 20px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(10,12,20,0.68);
-    backdrop-filter: blur(12px);
-    z-index: 9999;
+    position:fixed;top:0;width:100%;
+    padding:20px 60px;
+    display:flex;justify-content:space-between;align-items:center;
+    background:rgba(10,12,20,.7);
+    backdrop-filter:blur(12px);
+    z-index:1000;
 }
+.top-menu a{color:white;text-decoration:none;margin-left:25px;font-weight:600;}
 
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo-icon { font-size: 2rem; }
-
-.header-left span {
-    font-size: 1.35rem;
-    font-weight: bold;
-}
-
-nav.top-menu {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-}
-
-nav.top-menu a {
-    color:var(--text);
-    font-weight:600;
-    text-decoration:none;
-    padding:10px 16px;
-    border-radius:12px;
-    transition:0.25s;
-}
-
-nav.top-menu a:hover {
-    background:var(--primary);
-    color:white;
-    transform:translateY(-3px);
-}
-
-
-/* ========================================================= */
-/*                  HERO – ABSTRACT APPLE F1                 */
-/* ========================================================= */
-
-.hero {
-    height:110vh;
-    display:flex;
-    align-items:center;
-    padding-left:10vw;
-
-    background:
-    radial-gradient(circle at 20% 30%, rgba(120,100,255,0.30), transparent 55%),
-    radial-gradient(circle at 80% 70%, rgba(150,130,255,0.22), transparent 60%),
-    radial-gradient(circle at 50% 50%, rgba(90,80,200,0.15), transparent 60%),
-    #07090F;
-}
-
-.hero-content {
-    max-width:600px;
-}
-
-.hero-logo {font-size:4rem;}
-
-.hero h1 {
-    margin:20px 0;
-    font-size:4rem;
-}
-
-.hero p {
-    font-size:1.3rem;
-    opacity:.9;
-    line-height:1.7;
-}
-
-.hero-buttons{
-    margin-top:35px;
-    display:flex;
-    gap:20px;
-}
-
-.btn {
-    padding:14px 28px;
-    border-radius:14px;
-    font-weight:700;
-    text-decoration:none;
-    cursor:pointer;
-    transition:.25s;
-}
-
-.btn-primary {
-    background:var(--primary);
-    color:white;
-}
-.btn-primary:hover{background:var(--primary-light);transform:translateY(-3px);}
-
-.btn-outline {
-    border:2px solid white;
-    color:white;
-}
-.btn-outline:hover {background:white;color:black;transform:translateY(-3px);}
-
-
-/* ========================================================= */
-/*                     SECCIONS 100vh                        */
-/* ========================================================= */
-
-.section-wrapper {
+.hero{
     height:100vh;
-    max-width:1600px;
-    margin:0 auto;
-    display:flex;
-    align-items:center;
+    display:flex;align-items:center;
+    padding-left:10vw;
+}
+.hero h1{font-size:4rem;}
+
+.section-wrapper{
+    height:100vh;
+    display:flex;align-items:center;
     justify-content:space-between;
-    padding:0 40px;
+    padding:0 60px;
     gap:40px;
 }
-
-.section-wrapper.reverse {
-    flex-direction:row-reverse;
-}
-
-.section-box {
+.section-box{
     flex:1;
-    height:90vh;
+    background:var(--bg-card);
+    border-radius:var(--radius);
+    padding:60px;
+}
+.section-img{flex:1;}
+.section-img img{width:100%;border-radius:var(--radius);}
+
+.form-section{
+    max-width:900px;
+    margin:120px auto;
     padding:60px;
     background:var(--bg-card);
     border-radius:var(--radius);
-    box-shadow:0 10px 40px rgba(0,0,0,0.45);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
 }
-
-.section-box h2 {
-    font-size:2.5rem;
-    margin-bottom:25px;
-}
-
-.section-box p, .section-box li {
-    font-size:1.2rem;
-    line-height:1.75;
-}
-
-/* IMATGE */
-.section-img {
-    flex:1;
-    height:90vh;
-    border-radius:var(--radius);
-    overflow:hidden;
-    box-shadow:0 10px 40px rgba(0,0,0,0.5);
-}
-
-.section-img img {
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-
-/* ========================================================= */
-/*                     FORMULARI DE CONTACTE                 */
-/* ========================================================= */
-
-.form-section {
-    height:100vh;
-    max-width:900px;
-    margin:0 auto;
-    padding:80px;
-    background:var(--bg-card);
-    border-radius:var(--radius);
-    box-shadow:0 15px 45px rgba(0,0,0,0.5);
-    text-align:center;
-}
-
-form {
-    margin-top:30px;
-    display:flex;
-    flex-direction:column;
-    gap:25px;
-}
-
-form input, form textarea {
-    width:100%;
-    padding:18px;
+form{display:flex;flex-direction:column;gap:20px;}
+input, textarea{
+    padding:16px;
+    border-radius:12px;
     border:none;
-    border-radius:14px;
     background:#161a29;
     color:white;
-    font-size:1.1rem;
 }
-
-textarea {height:150px;}
-
-.form-btn {
-    padding:18px;
+button{
+    padding:16px;
     background:var(--primary);
-    border-radius:14px;
-    border:none;
-    font-weight:bold;
-    font-size:1.1rem;
-    color:white;
+    border:none;border-radius:14px;
+    color:white;font-weight:700;
     cursor:pointer;
-    transition:.25s;
 }
-
-.form-btn:hover {
-    background:var(--primary-light);
-    transform:translateY(-3px);
-}
-
-/* ========================================================= */
-/*                     PANTALLA D'AGRAÏMENT                  */
-/* ========================================================= */
-
-#thanksScreen {
-    display:none;
-    height:100vh;
-
-    background:
-    radial-gradient(circle at 20% 30%, rgba(120,100,255,0.20), transparent 55%),
-    radial-gradient(circle at 80% 70%, rgba(150,130,255,0.18), transparent 60%),
-    radial-gradient(circle at 50% 50%, rgba(90,80,200,0.12), transparent 60%),
-    #07090F;
-
-    color:white;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    font-size:2.4rem;
+footer{
     text-align:center;
-
-    animation:fadeIn 0.8s ease-out forwards;
+    padding:40px;
+    font-size:.9rem;
+    opacity:.7;
 }
-
-#thanksScreen button{
-    margin-top:40px;
-    padding:16px 32px;
-    border:none;
-    border-radius:14px;
-    background:var(--primary);
-    color:white;
-    font-size:1.1rem;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.25s;
-}
-
-#thanksScreen button:hover{
-    background:var(--primary-light);
-    transform:translateY(-3px);
-}
-
-@keyframes fadeIn {
-    from {opacity:0;filter:blur(10px);}
-    to {opacity:1;filter:blur(0);}
-}
-
-/* ========================================================= */
-/*             COOKIE BAR – FULL WIDTH, 3 BOTONS             */
-/* ========================================================= */
-
-#cookieBar {
-    position: fixed;
-    bottom:0;
-    left:0;
+#cookieBar{
+    position:fixed;bottom:0;left:0;
     width:100%;
-    background:white;
-    color:black;
-    padding:25px 40px;
-
-    display:flex;
-    justify-content:space-between;
+    background:white;color:black;
+    display:flex;justify-content:space-between;
     align-items:center;
-
-    box-shadow:0 -8px 20px rgba(0,0,0,0.35);
-    z-index:999999;
+    padding:20px 40px;
 }
-
-.cookie-options {
-    display:flex;
-    gap:15px;
-}
-
-.cookie-btn {
-    padding:10px 18px;
-    border:none;
-    border-radius:10px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
+.cookie-btn{padding:10px 18px;border-radius:10px;border:none;font-weight:bold;}
 .accept{background:var(--primary);color:white;}
-.reject{background:#555;color:white;}
-.manage{background:#ddd;color:black;}
-
-
-/* ========================================================= */
-/*                         RESPONSIVE                        */
-/* ========================================================= */
-
-@media(max-width:1100px){
-
-    .header-nav {
-        padding: 20px;
-    }
-
-    nav.top-menu {gap:20px;}
-
-    .section-wrapper,
-    .section-wrapper.reverse {
-        flex-direction:column;
-        height:auto;
-        padding-top:150px;
-        padding-bottom:150px;
-    }
-
-    .section-img, .section-box {
-        height:auto;
-    }
-
-    .hero {
-        padding-left:5vw;
-    }
-
-}
-
+.reject{background:#444;color:white;}
 </style>
 </head>
 
-
 <body>
 
-
-<!-- ✅ NAVBAR -->
 <div class="header-nav">
-    <div class="header-left">
-        <span class="logo-icon">🌿</span>
-        <span>FoodLogistic</span>
-    </div>
-
+    <strong>🌿 FoodLogistic</strong>
     <nav class="top-menu">
         <a href="#empresa">Empresa</a>
         <a href="#serveis">Serveis</a>
-        <a href="#contacte">Contacte</a>
-        <a href="#formulari">Formulari</a>
+        <a href="#formulari">Contacte</a>
     </nav>
 </div>
 
-
-<!-- ✅ HERO -->
 <div class="hero">
-    <div class="hero-content" data-aos="fade-right">
-        <div class="hero-logo">🌿</div>
+    <div>
         <h1>FoodLogistic S.A.</h1>
-        <p>Logística refrigerada d'alta precisió amb tecnologia intel·ligent.</p>
-
-        <div class="hero-buttons">
-            <a href="#serveis" class="btn btn-primary">Serveis</a>
-            <a href="#formulari" class="btn btn-outline">Contacta</a>
-        </div>
+        <p>Logística refrigerada intel·ligent</p>
     </div>
 </div>
 
-
-<!-- ✅ EMPRESA -->
 <div id="empresa" class="section-wrapper">
-    <div class="section-box" data-aos="fade-up">
+    <div class="section-box">
         <h2>Sobre l'empresa</h2>
-        <p>
-            FoodLogistic S.A. és líder en logística refrigerada amb tecnologia IoT + IA.
-            Garantim la cadena de fred amb monitoratge digital avançat.
-        </p>
+        <p>Líders en logística refrigerada amb tecnologia IoT.</p>
     </div>
-
-    <div class="section-img" data-aos="zoom-in">
-        <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=1600&q=80">
+    <div class="section-img">
+        <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6">
     </div>
 </div>
 
-
-<!-- ✅ SERVEIS -->
 <div id="serveis" class="section-wrapper reverse">
-    <div class="section-box" data-aos="fade-up">
+    <div class="section-box">
         <h2>Serveis</h2>
         <ul>
-            <li>✅ Transport frigorífic 24/7</li>
-            <li>✅ Seguiment GPS + IA</li>
-            <li>✅ Sensors IoT</li>
-            <li>✅ Magatzems refrigerats certificats</li>
-            <li>✅ Distribució nacional</li>
+            <li>✅ Transport refrigerat</li>
+            <li>✅ Seguiment GPS</li>
+            <li>✅ Magatzems certificats</li>
         </ul>
     </div>
-
-    <div class="section-img" data-aos="zoom-in">
-        <img src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1600&q=80">
-    </div>
 </div>
 
+<div id="formulari" class="form-section">
+<h2>Formulari de contacte</h2>
+<form id="contactForm">
 
-<!-- ✅ CONTACTE (ABSTRACTE F1) -->
-<div id="contacte" class="section-wrapper">
-    <div class="section-box" data-aos="fade-up">
-        <h2>Contacte</h2>
-        <p>📞 934 123 456</p>
-        <p>📧 info@foodlogistic.com</p>
-        <p>📍 Nau 14, Polígon La Marineta</p>
+<input type="text" id="nom" placeholder="Nom i cognoms" required>
+<input type="email" id="email" placeholder="Correu electrònic" required>
+<input type="tel" id="telefon" placeholder="Telèfon" required>
+<textarea id="missatge" placeholder="Missatge..." required></textarea>
 
-        <a href="#formulari" class="btn btn-primary" style="margin-top:25px;">Vull contactar</a>
-    </div>
+<label>
+<input type="checkbox" id="consentDades" required>
+Accepto la <a href="politica-privacitat.html" target="_blank">Política de Privacitat</a>
+</label>
 
-    <div class="section-img" data-aos="zoom-in">
-        <img src="https://images.unsplash.com/photo-1557683300-e6e7168e0f54?auto=format&fit=crop&w=1600&q=80">
-    </div>
+<label>
+<input type="checkbox" id="consentComercial">
+Accepto comunicacions comercials segons l’
+<a href="avis-legal.html" target="_blank">Avís Legal</a>
+</label>
+
+<button type="submit">Enviar</button>
+</form>
 </div>
 
+<footer>
+© 2026 FoodLogistic S.A. ·
+<a href="avis-legal.html">Avís Legal</a> ·
+<a href="politica-privacitat.html">Privacitat</a> ·
+<a href="politica-cookies.html">Cookies</a>
+</footer>
 
-<!-- ✅ LEGAL (ONADES L3) -->
-<div id="legal" class="section-wrapper reverse">
-    <div class="section-box" data-aos="fade-up">
-        <h2>Informació legal</h2>
-        <p>
-            Complim amb LOPDGDD i LSSI-CE: seguretat digital, privacitat i protecció de dades.
-        </p>
-    </div>
-
-    <div class="section-img" data-aos="zoom-in">
-        <img src="https://images.unsplash.com/photo-1526406915894-7bcd65f60845?auto=format&fit=crop&w=1600&q=80">
-    </div>
+<div id="cookieBar">
+<span>Utilitzem cookies pròpies i de tercers.</span>
+<div>
+<button class="cookie-btn accept" onclick="acceptCookies()">Accepta</button>
+<button class="cookie-btn reject" onclick="rejectCookies()">Rebutja</button>
 </div>
-
-
-<!-- ✅ FORMULARI -->
-<div id="formulari" class="form-section" data-aos="fade-up">
-    <h2>Formulari de contacte</h2>
-
-    <form id="contactForm">
-        <input type="text" id="nom" placeholder="Nom i cognoms">
-        <input type="email" id="email" placeholder="Correu electrònic">
-        <input type="tel" id="telefon" placeholder="Número de telèfon">
-        <textarea id="missatge" placeholder="Missatge o comentaris..."></textarea>
-
-        <button type="submit" class="form-btn">Enviar missatge</button>
-    </form>
 </div>
-
-
-<!-- ✅ PANTALLA D'AGRAÏMENT -->
-<div id="thanksScreen">
-    <div>✅ Gràcies per contactar amb nosaltres!</div>
-    <button onclick="window.location.href='index.htmlutton class="cookie-btn accept" onclick="acceptCookies()">Accepta</button>
-        <button class="cookie-btn reject" onclick="rejectCookies()">Rebutja</button>
-        <button class="cookie-btn manage" onclick="alert('Opcions avançades de cookies pròximament.')">Gestiona</button>
-    </div>
-</div>
-
-
-<!-- AOS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init()</script>
-
-
-<!-- ========================================================= -->
-<!--                VALIDACIÓ + PANTALLA GRÀCIES              -->
-<!-- ========================================================= -->
 
 <script>
-const form = document.getElementById("contactForm");
-const thanks = document.getElementById("thanksScreen");
-
-form.addEventListener("submit", function(e){
+document.getElementById("contactForm").addEventListener("submit", e=>{
     e.preventDefault();
-
-    const nom = document.getElementById("nom").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const tel = document.getElementById("telefon").value.trim();
-    const msg = document.getElementById("missatge").value.trim();
-
-    if(!nom || !email || !tel || !msg){
-        alert("❗ Cal completar TOTS els camps del formulari.");
+    if(!consentDades.checked){
+        alert("Has d’acceptar la Política de Privacitat");
         return;
     }
-
-    // Amagar tot i mostrar pantalla d'agraïment
-    document.body.innerHTML = "";
-    document.body.appendChild(thanks);
-    thanks.style.display="flex";
+    alert("✅ Missatge enviat correctament");
 });
-</script>
-
-
-<!-- ========================================================= -->
-<!--                       COOKIE BAR JS                       -->
-<!-- ========================================================= -->
-
-<script>
 function acceptCookies(){
-    localStorage.setItem("cookies","accepted");
-    document.getElementById("cookieBar").style.display="none";
+    localStorage.setItem("cookies","ok");
+    cookieBar.style.display="none";
 }
 function rejectCookies(){
-    localStorage.setItem("cookies","rejected");
-    document.getElementById("cookieBar").style.display="none";
+    localStorage.setItem("cookies","no");
+    cookieBar.style.display="none";
 }
-
-window.onload = () =>{
-    if(!localStorage.getItem("cookies")){
-        document.getElementById("cookieBar").style.display="flex";
-    } else {
-        document.getElementById("cookieBar").style.display="none";
+window.onload=()=>{
+    if(localStorage.getItem("cookies")){
+        cookieBar.style.display="none";
     }
-};
+}
 </script>
 
 </body>
