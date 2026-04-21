@@ -8,75 +8,156 @@
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
 <style>
-body, html{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+body, html {
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
 :root{
---bg-dark:#07090F;
---bg-card:#0E111C;
---primary:#6A4DFF;
---primary-light:#8C73FF;
---text:#E8EAFF;
---radius:32px;
+    --bg-dark:#07090F;
+    --bg-card:#0E111C;
+    --primary:#6A4DFF;
+    --primary-light:#8C73FF;
+    --text:#E8EAFF;
+    --radius:32px;
 }
 body{background:var(--bg-dark);color:var(--text);overflow-x:hidden;}
 html{scroll-behavior:smooth;}
 a{color:var(--text);text-decoration:none;}
 
+/* NAVBAR */
 .header-nav{
-position:fixed;top:0;width:100%;
-padding:20px 60px;
-display:flex;justify-content:space-between;align-items:center;
-background:rgba(10,12,20,.7);backdrop-filter:blur(12px);z-index:9999;
+    position:fixed;top:0;width:100%;
+    padding:20px 60px;
+    display:flex;justify-content:space-between;align-items:center;
+    background:rgba(10,12,20,.7);
+    backdrop-filter:blur(12px);
+    z-index:9999;
 }
 nav.top-menu{display:flex;gap:30px;}
-nav.top-menu a{padding:10px 16px;border-radius:12px;font-weight:600;}
+nav.top-menu a{
+    padding:10px 16px;
+    border-radius:12px;
+    font-weight:600;
+}
 nav.top-menu a:hover{background:var(--primary);}
 
+/* HERO */
 .hero{
-height:110vh;display:flex;align-items:center;padding-left:10vw;
-background:
-radial-gradient(circle at 20% 30%, rgba(120,100,255,.3), transparent 55%),
-radial-gradient(circle at 80% 70%, rgba(150,130,255,.2), transparent 60%),
-#07090F;
+    height:110vh;
+    display:flex;
+    align-items:center;
+    padding-left:10vw;
+    background:
+    radial-gradient(circle at 20% 30%, rgba(120,100,255,.3), transparent 55%),
+    radial-gradient(circle at 80% 70%, rgba(150,130,255,.2), transparent 60%),
+    #07090F;
 }
+
 .hero-title{
-font-size:4.5rem;font-weight:800;line-height:1.15;padding-bottom:.2em;
-background:linear-gradient(90deg,#fff,var(--primary-light));
--webkit-background-clip:text;-webkit-text-fill-color:transparent;
-text-shadow:0 15px 50px rgba(106,77,255,.35);
+    font-size:4.5rem;
+    font-weight:800;
+    line-height:1.15;
+    padding-bottom:.2em;
+    background:linear-gradient(90deg,#fff,var(--primary-light));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow:0 15px 50px rgba(106,77,255,.35);
 }
 .hero-subtitle{font-size:1.4rem;opacity:.85;margin-top:20px;}
 
+/* SECCIONS */
 .section-wrapper{
-height:100vh;max-width:1600px;margin:0 auto;
-display:flex;align-items:stretch;gap:40px;padding:0 40px;
-border-bottom:1px solid rgba(255,255,255,.04);
+    height:100vh;
+    max-width:1600px;
+    margin:0 auto;
+    display:flex;
+    gap:40px;
+    align-items:stretch;
+    padding:0 40px;
+    border-bottom:1px solid rgba(255,255,255,.05);
 }
 .section-wrapper.reverse{flex-direction:row-reverse;}
 
-.section-box,.section-img{height:80vh;flex:1;border-radius:var(--radius);}
+.section-box, .section-img{
+    height:80vh;
+    flex:1;
+    border-radius:var(--radius);
+}
+
 .section-box{
-background:var(--bg-card);padding:60px;
-display:flex;flex-direction:column;justify-content:center;
+    background:var(--bg-card);
+    padding:60px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
-.section-img{overflow:hidden;}
-.section-img img{width:100%;height:100%;object-fit:cover;}
 
+.section-img{
+    background:#000;
+    overflow:hidden;
+}
+
+.section-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* ✅ evitar tall en el PRIMER apartat */
+.section-wrapper:first-of-type .section-img img{
+    object-fit:contain;
+    background:#000;
+}
+
+/* FORMULARI */
 .form-section{
-max-width:900px;margin:120px auto;
-padding:80px;background:var(--bg-card);border-radius:var(--radius);
+    max-width:900px;
+    margin:120px auto;
+    padding:80px;
+    background:var(--bg-card);
+    border-radius:var(--radius);
+}
+form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+input, textarea{
+    padding:18px;
+    border-radius:14px;
+    background:#161a29;
+    border:none;
+    color:white;
+}
+textarea{height:150px;}
+.form-btn{
+    padding:18px;
+    background:var(--primary);
+    border:none;
+    border-radius:14px;
+    font-weight:bold;
 }
 
+/* FOOTER */
+footer{text-align:center;padding:40px;opacity:.7;}
+
+/* COOKIES */
 #cookie-banner{
-position:fixed;bottom:0;left:0;right:0;
-background:rgba(14,17,28,.95);
-padding:20px 40px;display:flex;justify-content:space-between;
-z-index:10000;
+    position:fixed;
+    bottom:0;left:0;right:0;
+    background:rgba(14,17,28,.95);
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:10000;
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <div class="header-nav">
 <strong>🌿 FoodLogistic</strong>
 <nav class="top-menu">
@@ -88,6 +169,7 @@ z-index:10000;
 </nav>
 </div>
 
+<!-- HERO -->
 <section class="hero">
 <div data-aos="fade-up">
 <h1 class="hero-title">FoodLogistic S.A.</h1>
@@ -95,29 +177,30 @@ z-index:10000;
 </div>
 </section>
 
+<!-- EMPRESA -->
 <section id="empresa" class="section-wrapper">
 <div class="section-box" data-aos="fade-up">
 <h2>Sobre l'empresa</h2>
-<p>FoodLogistic S.A. neix el 2012 amb l’objectiu de garantir la cadena de fred en el transport alimentari.</p>
-<p>Amb tecnologia IoT i control en temps real, oferim precisió i seguretat en cada trajecte.</p>
+<p>FoodLogistic S.A. neix el 2012 amb l’objectiu de modernitzar la logística refrigerada.</p>
+<p>Combinem flota especialitzada, sensors IoT i control intel·ligent per garantir la cadena de fred.</p>
 </div>
 <div class="section-img" data-aos="fade-left">
 <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=1600&q=80">
 </div>
 </section>
 
-<!-- ✅ FOTO DE SERVEIS CANVIADA -->
+<!-- SERVEIS -->
 <section id="serveis" class="section-wrapper reverse">
 <div class="section-box" data-aos="fade-up">
 <h2>Serveis</h2>
-<p>Solucions logístiques avançades adaptades al sector alimentari i farmacèutic.</p>
+<p>Solucions logístiques adaptades al sector alimentari i farmacèutic.</p>
 </div>
 <div class="section-img" data-aos="fade-right">
 <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1600&q=80">
 </div>
 </section>
 
-<!-- ✅ FOTO DE CONTACTE CANVIADA -->
+<!-- CONTACTE -->
 <section id="contacte" class="section-wrapper">
 <div class="section-box" data-aos="fade-up">
 <h2>Contacte</h2>
@@ -130,8 +213,28 @@ z-index:10000;
 </div>
 </section>
 
+<!-- ✅ FORMULARI RECUPERAT -->
 <section id="formulari" class="form-section" data-aos="fade-up">
 <h2>Formulari de contacte</h2>
+<form>
+<input type="text" placeholder="Nom i cognoms" required>
+<input type="email" placeholder="Correu electrònic" required>
+<input type="tel" placeholder="Telèfon" required>
+<textarea placeholder="Missatge..." required></textarea>
+
+<label>
+<input type="checkbox" required>
+Accepto la <a href="politica-privacitat.html">Política de Privacitat</a>
+</label>
+
+<label>
+<input type="checkbox">
+Accepto comunicacions comercials segons l’
+<a href="avis-legal.html">Avís Legal</a>
+</label>
+
+<button class="form-btn">Enviar missatge</button>
+</form>
 </section>
 
 <footer>© 2026 FoodLogistic S.A.</footer>
