@@ -5,11 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FoodLogistic S.A.</title>
 
-<!-- AOS -->
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
 <style>
-/* ================= GLOBAL ================= */
+/* ========== GLOBAL ========== */
 body, html {
     margin:0;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -30,7 +29,7 @@ body{
 html{scroll-behavior:smooth;}
 a{color:var(--text);text-decoration:none;}
 
-/* ================= NAVBAR ================= */
+/* ========== NAVBAR ========== */
 .header-nav{
     position:fixed;
     top:0;
@@ -53,7 +52,7 @@ nav.top-menu a{
 }
 nav.top-menu a:hover{background:var(--primary);}
 
-/* ================= HERO ================= */
+/* ========== HERO ========== */
 .hero{
     height:110vh;
     display:flex;
@@ -69,7 +68,7 @@ nav.top-menu a:hover{background:var(--primary);}
     font-size:4.5rem;
     font-weight:800;
     line-height:1.15;
-    padding-bottom:0.2em;
+    padding-bottom:.2em;
     background:linear-gradient(90deg,#fff,var(--primary-light));
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -87,7 +86,6 @@ nav.top-menu a:hover{background:var(--primary);}
     display:flex;
     gap:20px;
 }
-
 .btn{
     padding:14px 28px;
     border-radius:14px;
@@ -96,7 +94,7 @@ nav.top-menu a:hover{background:var(--primary);}
 .btn-primary{background:var(--primary);}
 .btn-outline{border:2px solid white;}
 
-/* ================= SECCIONS ================= */
+/* ========== SECCIONS ========== */
 .section-wrapper{
     height:100vh;
     max-width:1600px;
@@ -111,7 +109,7 @@ nav.top-menu a:hover{background:var(--primary);}
 
 .section-box,
 .section-img{
-    height:90vh;
+    height:80vh; /* ✅ més petits però iguals */
     flex:1;
     border-radius:var(--radius);
 }
@@ -144,7 +142,7 @@ nav.top-menu a:hover{background:var(--primary);}
     object-fit:cover;
 }
 
-/* ================= FORM ================= */
+/* ========== FORMULARI ========== */
 .form-section{
     max-width:900px;
     margin:120px auto;
@@ -169,14 +167,14 @@ textarea{height:150px;}
     font-weight:bold;
 }
 
-/* ================= FOOTER ================= */
+/* ========== FOOTER ========== */
 footer{
     text-align:center;
     padding:40px;
     opacity:.7;
 }
 
-/* ================= COOKIES ================= */
+/* ========== COOKIES ========== */
 #cookie-banner{
     position:fixed;
     bottom:0;
@@ -210,7 +208,7 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
-    <div data-aos="fade-up" data-aos-delay="200">
+    <div data-aos="fade-up">
         <h1 class="hero-title">FoodLogistic S.A.</h1>
         <p class="hero-subtitle">
             Logística refrigerada d’alta precisió amb tecnologia intel·ligent
@@ -226,53 +224,41 @@ footer{
 <section id="empresa" class="section-wrapper">
     <div class="section-box" data-aos="fade-up">
         <h2>Sobre l'empresa</h2>
-        <p>
-            FoodLogistic S.A. neix l’any 2012 amb l’objectiu de garantir que els productes
-            alimentaris més sensibles arribin al seu destí en condicions òptimes.
-        </p>
-        <p>
-            Amb una flota especialitzada i sistemes de control IoT, ens hem consolidat
-            com un referent en logística refrigerada d’alta precisió a nivell nacional.
-        </p>
+        <p>FoodLogistic S.A. neix l’any 2012 amb la voluntat de modernitzar la logística refrigerada.</p>
+        <p>Combinant flota especialitzada, sensors IoT i control intel·ligent, garantim seguretat i precisió.</p>
     </div>
     <div class="section-img" data-aos="fade-left">
         <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=1600&q=80">
     </div>
 </section>
 
-<!-- SERVEIS -->
+<!-- SERVEIS (FOTO CANVIADA) -->
 <section id="serveis" class="section-wrapper reverse">
     <div class="section-box" data-aos="fade-up">
         <h2>Serveis</h2>
-        <p>
-            Oferim solucions logístiques personalitzades, assegurant el control constant
-            de la cadena de fred i la traçabilitat total dels enviaments.
-        </p>
+        <p>Solucions logístiques adaptades a cada client amb control total de la cadena de fred.</p>
         <ul>
-            <li>✅ Transport frigorífic 24/7 amb flota pròpia</li>
-            <li>✅ Seguiment GPS en temps real amb IA</li>
-            <li>✅ Sensors IoT per al control de temperatura</li>
+            <li>✅ Flota frigorífica 24/7</li>
+            <li>✅ Seguiment GPS en temps real</li>
+            <li>✅ Monitorització IoT</li>
         </ul>
     </div>
     <div class="section-img" data-aos="fade-right">
-        <img src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1600&q=80">
+        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1600&q=80">
     </div>
 </section>
 
-<!-- CONTACTE -->
+<!-- CONTACTE (FOTO CANVIADA) -->
 <section id="contacte" class="section-wrapper">
     <div class="section-box" data-aos="fade-up">
         <h2>Contacte</h2>
-        <p>
-            El nostre equip tècnic i comercial està disponible per dissenyar una solució
-            logística adaptada a les teves necessitats.
-        </p>
+        <p>El nostre equip t’assessora per dissenyar la millor solució logística per al teu negoci.</p>
         <p>📞 934 123 456</p>
         <p>📧 info@foodlogistic.com</p>
         <p>📍 Nau 14, Polígon La Marineta</p>
     </div>
     <div class="section-img" data-aos="fade-left">
-        <img src="https://images.unsplash.com/photo-1557683300-e6e7168e0f54?auto=format&fit=crop&w=1600&q=80">
+        <img src="https://images.unsplash.com/photo-1581092787765-ff13e0191b23?auto=format&fit=crop&w=1600&q=80">
     </div>
 </section>
 
@@ -319,7 +305,6 @@ Accepto comunicacions comercials segons l’
     </button>
 </div>
 
-<!-- SCRIPTS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
 AOS.init({
@@ -332,4 +317,3 @@ AOS.init({
 
 </body>
 </html>
-``
