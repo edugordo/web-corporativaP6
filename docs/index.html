@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FoodLogistic S.A.</title>
 
-<!-- AOS -->
+<!-- AOS CSS -->
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
 <style>
@@ -78,6 +78,7 @@ nav.top-menu a:hover{
 .hero-logo{font-size:4rem;}
 .hero h1{margin:20px 0;font-size:4rem;}
 .hero p{font-size:1.3rem;line-height:1.7;}
+
 .hero-buttons{
     margin-top:35px;
     display:flex;
@@ -166,6 +167,41 @@ footer{
     font-size:.9rem;
     opacity:.7;
 }
+
+/* ================= COOKIE BANNER ================= */
+#cookie-banner{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#ffffff;
+    color:#000000;
+    padding:20px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    box-shadow:0 -8px 20px rgba(0,0,0,.35);
+    z-index:10000;
+}
+#cookie-banner p{
+    margin:0;
+    font-size:.95rem;
+}
+.cookie-actions{
+    display:flex;
+    gap:10px;
+}
+.cookie-btn{
+    padding:10px 16px;
+    border-radius:10px;
+    border:none;
+    font-weight:600;
+    cursor:pointer;
+}
+.cookie-accept{background:var(--primary);color:white;}
+.cookie-info{background:#ddd;}
+.cookie-manage{background:#555;color:white;}
 </style>
 </head>
 
@@ -205,8 +241,7 @@ footer{
         <p>FoodLogistic S.A. és líder en logística refrigerada amb tecnologia IoT.</p>
     </div>
     <div class="section-img" data-aos="fade-left">
-        <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=1600&q=80"
-             alt="Tecnologia aplicada a la logística">
+        <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=1600&q=80" alt="Tecnologia logística">
     </div>
 </section>
 
@@ -221,8 +256,7 @@ footer{
         </ul>
     </div>
     <div class="section-img" data-aos="fade-right">
-        <img src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1600&q=80"
-             alt="Infraestructura digital moderna">
+        <img src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1600&q=80" alt="Infraestructura digital">
     </div>
 </section>
 
@@ -235,8 +269,7 @@ footer{
         <p>📍 Nau 14, Polígon La Marineta</p>
     </div>
     <div class="section-img" data-aos="fade-left">
-        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80"
-             alt="Oficines corporatives">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80" alt="Equip d'oficina">
     </div>
 </section>
 
@@ -257,10 +290,30 @@ footer{
     © 2026 FoodLogistic S.A.
 </footer>
 
-<!-- AOS -->
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+    <p>Aquest lloc web utilitza cookies pròpies i de tercers per millorar l’experiència d’usuari.</p>
+    <div class="cookie-actions">
+        <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accepta</button>
+        <button class="cookie-btn cookie-info" onclick="goToCookiesInfo()">Més info</button>
+        <button class="cookie-btn cookie-manage" onclick="manageCookies()">Gestiona cookies</button>
+    </div>
+</div>
+
+<!-- AOS JS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
 AOS.init({ duration: 900, once: true });
+
+function acceptCookies(){
+    document.getElementById("cookie-banner").style.display = "none";
+}
+function goToCookiesInfo(){
+    window.location.href = "politica-cookies.html";
+}
+function manageCookies(){
+    alert("Opcions avançades de configuració de cookies pròximament disponibles.");
+}
 </script>
 
 </body>
