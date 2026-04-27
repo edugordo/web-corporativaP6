@@ -5,10 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FoodLogistic S.A.</title>
 
-<!-- AOS CSS (CORRECTE) -->
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos===== GLOBAL ================= */
+<!-- AOS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+<style>
+/* ================= GLOBAL ================= */
 body, html {
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 :root {
     --bg-dark:#07090F;
@@ -21,12 +24,7 @@ body, html {
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--bg-dark);color:var(--text);overflow-x:hidden;}
 html{scroll-behavior:smooth;}
-
 a{color:var(--text);text-decoration:none;}
-a:focus, button:focus, input:focus, textarea:focus {
-    outline: 3px solid var(--primary-light);
-    outline-offset: 3px;
-}
 
 /* ================= NAVBAR ================= */
 .header-nav{
@@ -51,16 +49,18 @@ a:focus, button:focus, input:focus, textarea:focus {
 
 nav.top-menu{
     display:flex;
-    gap:30px;
+    gap:40px;
 }
 nav.top-menu a{
     padding:10px 16px;
     border-radius:12px;
     font-weight:600;
+    transition:.25s;
 }
 nav.top-menu a:hover{
     background:var(--primary);
     color:#fff;
+    transform:translateY(-3px);
 }
 
 /* ================= HERO ================= */
@@ -70,9 +70,9 @@ nav.top-menu a:hover{
     align-items:center;
     padding-left:10vw;
     background:
-    radial-gradient(circle at 20% 30%, rgba(120,100,255,0.3), transparent 55%),
-    radial-gradient(circle at 80% 70%, rgba(150,130,255,0.22), transparent 60%),
-    #07090F;
+      radial-gradient(circle at 20% 30%, rgba(120,100,255,.3), transparent 55%),
+      radial-gradient(circle at 80% 70%, rgba(150,130,255,.22), transparent 60%),
+      #07090F;
 }
 .hero-content{max-width:600px;}
 .hero-logo{font-size:4rem;}
@@ -110,8 +110,8 @@ nav.top-menu a:hover{
     background:var(--bg-card);
     border-radius:var(--radius);
 }
-.section-box h2{font-size:2.5rem;margin-bottom:20px;}
-.section-box p, .section-box li{font-size:1.2rem;line-height:1.7;}
+.section-box h2{font-size:2.5rem;margin-bottom:25px;}
+.section-box p, .section-box li{font-size:1.2rem;line-height:1.75;}
 
 .section-img{
     flex:1;
@@ -132,28 +132,31 @@ nav.top-menu a:hover{
     padding:80px;
     background:var(--bg-card);
     border-radius:var(--radius);
+    text-align:center;
 }
 form{
+    margin-top:30px;
     display:flex;
     flex-direction:column;
-    gap:20px;
+    gap:25px;
 }
-label{font-size:.95rem;}
 input, textarea{
     padding:18px;
+    border:none;
     border-radius:14px;
     background:#161a29;
-    border:none;
-    color:#fff;
+    color:white;
+    font-size:1.1rem;
 }
 textarea{height:150px;}
 .form-btn{
     padding:18px;
     background:var(--primary);
-    border:none;
     border-radius:14px;
-    color:#fff;
+    border:none;
     font-weight:bold;
+    font-size:1.1rem;
+    color:white;
 }
 
 /* ================= FOOTER ================= */
@@ -163,33 +166,6 @@ footer{
     font-size:.9rem;
     opacity:.7;
 }
-
-/* ================= COOKIE BANNER ================= */
-#cookie-banner{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    background:#fff;
-    color:#000;
-    padding:20px 30px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    box-shadow:0 -8px 20px rgba(0,0,0,.35);
-    z-index:10000;
-}
-.cookie-actions{display:flex;gap:10px;}
-.cookie-btn{
-    padding:10px 16px;
-    border-radius:10px;
-    border:none;
-    font-weight:600;
-    cursor:pointer;
-}
-.cookie-accept{background:var(--primary);color:#fff;}
-.cookie-info{background:#ddd;}
-.cookie-manage{background:#555;color:#fff;}
 </style>
 </head>
 
@@ -202,11 +178,10 @@ footer{
         <span>FoodLogistic</span>
     </div>
     <nav class="top-menu">
-        #empresaEmpresa</a>
-        #serveisServeis</a>
-        #contacteContacte</a>
-        #formulariFormulari</a>
-        <a href="avis-legall</a>
+        <a href="#empresa">Empresa</a>
+        <a href="#serveis">Serveis</a>
+        <a href="#contacte">Contacte</a>
+        <a href="#formulari">Formulari</a>
     </nav>
 </header>
 
@@ -217,7 +192,8 @@ footer{
         <h1>FoodLogistic S.A.</h1>
         <p>Logística refrigerada d'alta precisió amb tecnologia intel·ligent.</p>
         <div class="hero-buttons">
-            <a href="#serveis" class        #formulariContacta</a>
+            <a href="#serveis" class="btn btn-primary">Serveis</a>
+            <a href="#formulari" class="btn btn-outline">Contacta</a>
         </div>
     </div>
 </section>
@@ -226,21 +202,31 @@ footer{
 <section id="empresa" class="section-wrapper">
     <div class="section-box" data-aos="fade-up">
         <h2>Sobre l'empresa</h2>
-        <p>Especialistes en logística refrigerada amb sistemes intel·ligents.</p>
+        <p>FoodLogistic S.A. és líder en logística refrigerada amb tecnologia IoT.</p>
     </div>
     <div class="section-img" data-aos="fade-left">
-        <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=1600&q=80" alt="Tecnologia logística-->
+        <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=1600&q=80"
+             alt="Tecnologia aplicada a la logística">
+    </div>
+</section>
+
+<!-- SERVEIS -->
 <section id="serveis" class="section-wrapper reverse">
     <div class="section-box" data-aos="fade-up">
         <h2>Serveis</h2>
         <ul>
-            <li>✅ Transport refrigerat 24/7</li>
-            <li>✅ Seguiment GPS</li>
-            <li>✅ Control IoT</li>
+            <li>✅ Transport frigorífic 24/7</li>
+            <li>✅ Seguiment GPS + IA</li>
+            <li>✅ Sensors IoT</li>
         </ul>
     </div>
     <div class="section-img" data-aos="fade-right">
-        <img src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1600&q=80" alt="Infraestructura digital>
+        <img src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1600&q=80"
+             alt="Infraestructura digital moderna">
+    </div>
+</section>
+
+<!-- CONTACTE -->
 <section id="contacte" class="section-wrapper">
     <div class="section-box" data-aos="fade-up">
         <h2>Contacte</h2>
@@ -249,55 +235,31 @@ footer{
         <p>📍 Nau 14, Polígon La Marineta</p>
     </div>
     <div class="section-img" data-aos="fade-left">
-        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80" alt="Equip treballant enRI -->
-<section id="formulari" class="form-section">
-<h2>Formulari de contacte</h2>
-<form>
-    <label for="nom">Nom i cognoms</label>
-    <input id="nom" type="text" required>
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80"
+             alt="Oficines corporatives">
+    </div>
+</section>
 
-    <label for="email">Correu electrònic</label>
-    <input id="email" type="email" required>
-
-    <label for="tel">Telèfon</label>
-    <input id="tel" type="tel" required>
-
-    <label for="msg">Missatge</label>
-    <textarea id="msg" required></textarea>
-
-    <label>
-        <input type="checkbox" required>
-        Accepto la politica-privacitat.htmlPolítica de Privacitat</a>
-    </label>
-
-    <label>
-        <input type="checkbox">
-        Accepto comunicacions comercials
-    </label>
-
-    <button type="submit" class="form-btn">Enviar missatge</button>
-</form>
+<!-- FORMULARI -->
+<section id="formulari" class="form-section" data-aos="fade-up">
+    <h2>Formulari de contacte</h2>
+    <form>
+        <input type="text" placeholder="Nom i cognoms" required>
+        <input type="email" placeholder="Correu electrònic" required>
+        <input type="tel" placeholder="Telèfon" required>
+        <textarea placeholder="Missatge..." required></textarea>
+        <button type="submit" class="form-btn">Enviar missatge</button>
+    </form>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    © 2026 FoodLogistic S.A. ·
-    <a href="avis-legal Legal</a> ·
-    <a hrefa-privacitat.htmlPrivacitat</a> ·
-    politica-cookies.htmlCookies</a>
+    © 2026 FoodLogistic S.A.
 </footer>
 
-<!-- COOKIE BANNER -->
-<div id="cookie-banner">
-    <p>Aquest lloc web utilitza cookies pròpies i de tercers.</p>
-    <div class="cookie-actions">
-        <button class="cookie-btn cookie-accept" onclick="this.parentElement.parentElement.style.display='none'">Accepta</button>
-        <button class="cookie-btn cookie-info" onclick="location.href='politican cookie-manage" onclick="alert('Gestió de cookies pròximament')">Gestiona cookies</button>
-    </div>
-</div>
-
-<!-- AOS JS (CORRECTE) -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.jsript>
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
 AOS.init({ duration: 900, once: true });
 </script>
 
